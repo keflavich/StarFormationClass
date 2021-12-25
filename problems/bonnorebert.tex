@@ -21,6 +21,15 @@
 \usepackage{xspace} % Used for printing a trailing space better than using a tilde (~) using the \xspace command
 
 \begin{document}
+
+This problem set is based on Krumholz chapter 6
+(\url{https://github.com/Open-Astrophysics-Bookshelf/star_formation_notes})
+with additions and clarifications by Adam Ginsburg.
+
+See also
+\url{http://astro1.physics.utoledo.edu/~megeath/ph6820/lecture6_ph6820.pdf},
+which walks through the same derivation.
+
 \textbf{The Bonnor-Ebert Sphere.}\\
 Here we will investigate the properties of hydrostatic spheres of gas supported
 by thermal pressure. These are reasonable models for thermally-supported
@@ -65,6 +74,7 @@ Use your result from the previous part to eliminate $\rho$, and define $\psi \eq
 \frac{1}{\xi^2}\frac{d}{d\xi}\left(\xi^2 \frac{d\psi}{d\xi}\right) = e^{-\psi}.
 \end{displaymath}
 where $\xi = r/r_0$. What value of $r_0$ is required to obtain this equation?
+\label{item:r0}
 
 
 \item Numerically integrate the isothermal Lane-Emden equation subject to the
@@ -118,6 +128,26 @@ Hint: to evaluate the integral, it is helpful to use the isothermal Lane-Emden e
 \item The existence of a finite maximum $m$ implies that, for a given dimensional mass $M$, there is a maximum surface pressure $P_s$ at which a cloud of that mass can be in hydrostatic equilibrium. Solve for this maximum, and compare your result to the result you obtained in part (a).
 \item Conversely, for a given surface pressure $P_s$ and sound speed $c_s$ there exists a maximum mass at which the cloud can be in hydrostatic equilibrium, called the Bonnor-Ebert mass $M_{\mathrm{BE}}$. Obtain an expression for $M_{\mathrm{BE}}$ in terms of $P_s$ and $c_s$. In a typical low-mass star-forming region, the surface pressure on a core might be $P_{\mathrm{s}}/k_{\rm B} = 3\times 10^5$ K cm$^{-3}$. Compute this mass for a core with a temperature of 10 K, assuming the standard mean molecular weight $\mu=2.3$.\\
     By contrast, in Galactic centers and dense star forming regions in the early universe, the temperature and pressure may have been higher.  What is the Bonnor-Ebert mass for $P_{\mathrm{s}}/k_{\rm B} = 10^7$ K cm$^{-3}$ and T=$50$ K?
+    \label{item:m_be}
+
+
+\item Now that you have computed the Bonnor-Ebert mass and surface pressure, determine the size $r_0$ using the equation derived in Part \ref{item:r0}.
+    You will need to determine the central density $\rho_c$ as well.  What is this value in g cm$^{-3}$ and particles per cubic centimeter?
+    Evaluate these numbers for both cases in Part \ref{item:m_be}.
+
+\item Plot the enclosed mass and the average enclosed density as a function of radius in real physical units.
+    Plot these values for both cases in Part \ref{item:m_be}.
+
+\item Identify a good approximation of the density profile of the form:
+    \begin{displaymath}
+        \rho(r) = \rho_c \frac{(c \cdot r_0)^\alpha}{(c \cdot r_0)^\alpha + r^\alpha}
+    \end{displaymath}
+
+    For $\alpha=2$, this equation is a Plummer profile.  More generally, this
+    is a power-law profile with a flattened central core; for $r>>r_0$, this
+    profile approaches $\rho(r) = r^{-\alpha}$.  For $r<<r_0$, $\rho=\rho_c$.
+
+    Evaluate: over what range is this numerical approximation reasonable?
 \end{enumerate}
 
 \end{document}
