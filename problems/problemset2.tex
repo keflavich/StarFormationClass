@@ -1,0 +1,73 @@
+
+\documentclass[twoside]{tufte-book} % Use the tufte-book class which in turn uses the tufte-common class
+\pdfoutput=1
+\usepackage{natbib}
+
+\usepackage{microtype} % Improves character and word spacing
+
+\usepackage{lipsum} % Inserts dummy text
+
+\usepackage{booktabs} % Better horizontal rules in tables
+
+\usepackage{graphicx} % Needed to insert images into the document
+\graphicspath{{graphics/}} % Sets the default location of pictures
+\setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio} % Improves figure scaling
+
+\usepackage{fancyvrb} % Allows customization of verbatim environments
+\fvset{fontsize=\normalsize} % The font size of all verbatim text can be changed here
+
+\newcommand{\hangp}[1]{\makebox[0pt][r]{(}#1\makebox[0pt][l]{)}} % New command to create parentheses around text in tables which take up no horizontal space - this improves column spacing
+\newcommand{\hangstar}{\makebox[0pt][l]{*}} % New command to create asterisks in tables which take up no horizontal space - this improves column spacing
+
+\usepackage{xspace} % Used for printing a trailing space better than using a tilde (~) using the \xspace command
+
+\begin{document}
+
+\noindent\textbf{Problem Set 2: Core \& Protostar Evolution}
+
+\item \textbf{The Origin of Brown Dwarfs.}\\
+For the purposes of this problem, we will define a brown dwarf as any object whose mass is below $M_{\rm BD} = 0.075$ $\msun$, the hydrogen burning limit. We would like to know if these could plausibly be produced via turbulent fragmentation, as appears to be the case for stars.
+\begin{enumerate}
+\item For a \citet{chabrier05a} IMF (see Chapter \ref{ch:obsstars}, equation \ref{eq:chabrier}), compute the fraction $f_{\rm BD}$ of the total mass of stars produced that are brown dwarfs.
+\item In order to collapse the brown dwarf must exceed the Bonnor-Ebert mass. Consider a molecular cloud of temperature 10 K. Compute the minimum ambient density $n_{\rm min}$ that a region of the cloud must have in order for the thermal pressure to be such that the Bonnor-Ebert mass is less than the brown dwarf mass.
+\item Assume the cloud has a lognormal density distribution; the mean density is $\overline{n}$ and the Mach number is $\mathcal{M}$. Plot a curve in the $(\overline{n}$, $\mathcal{M})$ plane along which the fraction of the mass at densities above $n_{\rm min}$ is equal to $f_{\rm BD}$. Does the gas cloud that formed the cluster IC 348 ($\overline{n} \approx 5\times 10^4$ cm$^{-3}$, $\mathcal{M}\approx 7$) fall into the part of the plot where the mass fraction is below or above $f_{\rm BD}$?
+\end{enumerate}
+
+\item \textbf{Infall: Core shape}
+We showed that in a flow of infalling gas, where the gas is in free fall toward the central
+protostar, the continuity equation (i.e. conservation of mass) requires that the gas density
+has the following dependency on radius:
+\begin{equation}
+    \rho\propto r^{-3/2} 
+\end{equation}
+Now consider a constant velocity flow where there is no acceleration (either infall or outflow,
+the direction of the flow is irrelevant). The density is given by:
+\begin{equation}
+\rho \propto r^{-\alpha}
+\end{equation}
+Using the equation of continuity, what is $\alpha$?
+
+\item \textbf{Infall}
+     For an isothermal sphere, the mass infall rate, $\dot{M}$ , is a
+    constant in time and approximately equal to $\dot_{M} = c^3_s/G$.
+    In contrast, for the collapse of a Bonnor-Ebert sphere
+there is an initial ramp-up in infall rate. What is the time dependance for the this initial
+phase of a Bonnor-Ebert sphere collapse? Approximate the inner region of a Bonner-Ebert
+sphere as a constant density sphere. Assume a wave of infalling gas moving out at $r(t) = c_s t$. Note
+that the solution for free fall for a constant density sphere is that each concentric shell takes
+an equal time to collapse. The infall of each concentric region is triggered by the passage of
+the rarefraction wave. Write the answer in terms of the gas density, $\rho_c$, the sound speed $c_s$,
+and time.
+
+
+\item {\bf A Simple Protostellar Evolution Model.}\\
+Consider a protostar forming with a constant accretion rate $\dot{M}$. The accreting gas is fully molecular, arrives at free-fall, and radiates away a luminosity $L_{\rm acc} = f_{\rm acc} G M \dot{M}/R$ at the accretion shock, where $M$ and $R$ are the instantaneous protostellar mass and radius, and $f_{\rm acc}$ is a numerical constant of order unity. At the end of contraction the resulting star is fully ionized, all its deuterium has been burned to hydrogen, and it is in hydrostatic equilibrium. The ionization potential of hydrogen is $\psi_I = 13.6$ eV per amu, the dissociation potential of molecular hydrogen is $\psi_M=2.2$ eV per amu, and the energy released by deuterium burning is $\psi_D\approx 100$ eV per amu of total gas (not per amu of deuterium).
+\begin{enumerate}
+\item First consider a low-mass protostar whose internal structure is well-described by an $n=3/2$ polytrope. Compute the total energy of the star, including thermal energy, gravitational energy, and the chemical energies associated with ionization, dissociation, and deuterium burning.
+\item Use your expression for the total energy to derive an evolution equation for the radius for a star. Assume the star is always on the Hayashi track, which for the purposes of this problem we will approximate as having a fixed effective temperature $T_{\rm H} = 3500$ K.
+\item Numerically integrate your equation and plot the radius as a function of mass for $\dot{M} = 10^{-5}$ $\msun$ yr$^{-1}$ and $f_{\rm acc}=3/4$. As an initial condition, use $R=2.5$ $\rsun$ and $M=0.01$ $\msun$, and stop the integration at a mass of $M=1.0$ $\msun$. Plot the radius and luminosity as a function of mass; in the luminosity, include both the the accretion luminosity and the internal luminosity produced by the star.
+\item Now consider two modifications we can make to allow the model to work for massive protostars. First, since massive stars are radiative, the polytropic index will be roughly $n=3$ rather than $n=3/2$. Second, the surface temperature will in general be larger than the Hayashi limit, so take the luminosity to be $L=\max[L_{\rm H}, \lsun(M/\msun)^3]$, where $L_{\rm H}=4\pi R^2 \sigma T_{\rm H}^4$ and $R$ is the stellar radius. Modify your evolution equation for the radius to include these effects, and numerically integrate the modified equations up to $M=50$ $\msun$ for $\dot{M} = 10^{-4}$ $\msun$ yr$^{-1}$ and $f_{\rm acc}=3/4$, using the same initial conditions as for the low mass case. Plot $R$ and $L$ versus $M$.
+\item Compare your result to the fitting formula for the ZAMS radius of solar-metallicity stars as a function of $M$ in \citet{tout96a}\footnote{\href{http://adsabs.harvard.edu/abs/1996MNRAS.281..257T}{Tout et al., 1996, MNRAS 281, 257}}. Find the mass at which the massive star would join the main sequence. Your plots for $R$ and $L$ are only valid up to this mass, because this simple model does not include hydrogen burning.
+\end{enumerate}
+
+\end{document}

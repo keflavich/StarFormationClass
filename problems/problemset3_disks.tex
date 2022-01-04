@@ -1,0 +1,156 @@
+\documentclass[twoside]{tufte-book} % Use the tufte-book class which in turn uses the tufte-common class
+\pdfoutput=1
+\usepackage{natbib}
+
+\usepackage{microtype} % Improves character and word spacing
+
+\usepackage{lipsum} % Inserts dummy text
+
+\usepackage{booktabs} % Better horizontal rules in tables
+
+\usepackage{graphicx} % Needed to insert images into the document
+\graphicspath{{graphics/}} % Sets the default location of pictures
+\setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio} % Improves figure scaling
+
+\usepackage{fancyvrb} % Allows customization of verbatim environments
+\fvset{fontsize=\normalsize} % The font size of all verbatim text can be changed here
+
+\newcommand{\hangp}[1]{\makebox[0pt][r]{(}#1\makebox[0pt][l]{)}} % New command to create parentheses around text in tables which take up no horizontal space - this improves column spacing
+\newcommand{\hangstar}{\makebox[0pt][l]{*}} % New command to create asterisks in tables which take up no horizontal space - this improves column spacing
+
+\usepackage{xspace} % Used for printing a trailing space better than using a tilde (~) using the \xspace command
+
+\begin{document}
+
+\noindent\textbf{Problem Set 3: Disks}
+
+
+
+
+
+
+
+
+
+
+Megeath hw 3q3
+ 2 
+disk and Router is the outer radius of the disk. For the purpose of this exercise, you can let
+Rinner ! 0 and Router ! 1. Write the answer in in terms of constants given in equations 3
+and 4, a constant value which is given by an integral between 0 and 1, and a power-law of
+ where the exponent is a function of q. You can do this by substituting
+x =  h
+kT01/q r
+r0
+(5)
+into the integral.
+ii.) What is the spectral index:
+ = dlog(F)/dlog() (6)
+as a function of q? What is  for a passively heated flat disk where T / r−3/4?
+4. Write down the radiative transfer equation of a two layer disk, the two layers being a
+dense inner layer centered on the mid-plane of the disk and the outer layer being a thinner
+disk atmosphere. Consider each layer as an infinite slab of constant thickness. Consider
+only radiative transfer perpendicular to the slab (reducing this to a 1-D problem). First,
+write the equation for the intensity of light emitted perpendicular to the slabs in terms of
+the temperature of the inner slab T2, outer slab temperature T1, the opacity per mass ,
+the density of the outer slab 1, and the thickness of the outer slab, h1. Assume that the
+inner slab has 2 >> 1.
+In which of the following cases do you see the silicate features in emission, in absorption, or
+no silicate feature?
+T1 > T2, 1 << 1, 2 >> 1 (7)
+T1 > T2, 1 >> 1, 2 >> 1 (8)
+T1 < T2, 1 << 1, 2 >> 1 (9)
+
+
+Krumholz probset 3
+
+\item \textbf{Toomre Instability.}\\
+Chapter \ref{ch:sflaw_th} discusses the Toomre instability as a potentially important factor in driving star formation. It may also be relevant to determining the maximum masses of molecular clouds. In this problem we will calculate the stability condition and related quantities. Consider a uniform, infinitely thin disk of surface density $\Sigma$ occupying the $z=0$ plane. The disk has a flat rotation curve with velocity $v_R$, so the angular velocity is $\veco=\Omega \ehat_z$, with $\Omega = v_R/r$ at a distance $r$ from the disk center. The velocity of the fluid in the $z=0$ plane is $\vecv$ and its vertically-integrated pressure is $\Pi=\int_{-\infty}^{\infty} P \, dz = \Sigma c_s^2$. 
+\begin{enumerate}
+\item Consider a coordinate system co-rotating with the disk, centered at a distance $R$ from the disk center, oriented so that the $x$ direction is radially outward and the $y$ direction is in the direction of rotation. In this frame, the vertically-integrated equations of motion and the Poisson equation are
+\begin{eqnarray*}
+\frac{\partial \Sigma}{\partial t} + \nabla \cdot (\Sigma \vecv) & = & 0 \\
+\frac{\partial \vecv}{\partial t} + (\vecv\cdot\nabla)\vecv & = & -\frac{\nabla \Pi}{\Sigma} - \nabla \phi - 2\veco \times \vecv + \Omega^2 (x \ehat_x + y \ehat_y) \\
+\nabla^2 \phi & = & 4 \pi G \Sigma \delta(z).
+\end{eqnarray*}
+The last two terms in the second equation are the Coriolis and centrifugal force terms.
+We wish to perform a stability analysis of these equations. Consider a solution $(\Sigma_0, \phi_0)$ to these equations in which the gas is in equilibrium (i.e., $\vecv=0$), and add a small perturbation: $\Sigma=\Sigma_0 + \epsilon \Sigma_1$, $\vecv = \vecv_0 + \epsilon \vecv_1$, $\phi=\phi_0 + \epsilon \phi_1$, where $\epsilon \ll 1$. Derive the perturbed equations by substituting these values of $\Sigma$, $\vecv$, and $\phi$ into the equations of motion and keeping all the terms that are linear in $\epsilon$.
+\item The perturbed equations can be solved by Fourier analysis. Consider a trial value of $\Sigma_1$ described by a single Fourier mode $\Sigma_1 = \Sigma_a \exp[i(kx - \omega t)]$, where we choose to orient our coordinate system so that the wave vector $\mathbf{k}$ for this mode is in the $x$ direction. As an {\it ansatz} for $\phi_1$, we will look for a solution of the form $\phi_1 = \phi_a \exp[i(kx - \omega t) - |k z|]$. (One can show that the solution must take this form, but we will not do so here.) Derive the relationship between $\phi_a$ and $\Sigma_a$.
+\item Now try a similar single-Fourier mode form for the perturbed velocity: $\vecv_1 = (v_{ax} \ehat_x + v_{ay} \ehat_y) \exp[i(kx - \omega t)]$. Derive three equations relating the unknowns $\Sigma_a$, $v_{ax}$, and $v_{ay}$. You will find it useful to expand $\Omega$ in a Taylor series around the origin of your coordinate system, i.e., write $\Omega = \Omega_0 + (d\Omega/dx)_0 x$, where $\Omega_0 = v_R/R$ and $(d\Omega/dx)_{0} = -\Omega_0/R$.
+\item Show that these equations have non-trivial solutions only if
+\begin{displaymath}
+\omega^2 = 2 \Omega_0^2 - 2 \pi G \Sigma_0 |k| + k^2 c_s^2.
+\end{displaymath}
+This is the dispersion relation for our rotating thin disk.
+\item Solutions with $\omega^2 > 0$ correspond to oscillations, while those with $\omega^2 < 0$ correspond to pairs of modes, one of which decays with time and one of which grows. We refer to the growing modes as unstable, since in the linear regime they become arbitrarily large. Show that an unstable mode exists if $Q<1$, where
+\begin{displaymath}
+Q = \frac{\sqrt{2} \Omega_0 c_s}{\pi G \Sigma_0}.
+\end{displaymath}
+is called the Toomre parameter. Note that this stability condition refers only to axisymmetric modes in infinitely thin disks; non-axisymmetric instabilities in finite thickness disks usually appear around $Q\approx 1.5$.
+\item When an unstable mode exists, we define the Toomre wave number $k_T$ as the wave number that corresponds to mode for which the instability grows fastest. Calculate $k_T$ and the corresponding Toomre wavelength, $\lambda_T = 2\pi / k_T$.
+\item The Toomre mass, defined as $M_T =  \lambda_T^2 \Sigma_0$, is the characteristic mass of an unstable fragment produced by Toomre instability. Compute $M_T$, and evaluate it for $Q=1$, $\Sigma_0=12$ $\msun$ pc$^{-2}$ and $c_s = 6$ km s$^{-1}$, typical values for the atomic ISM in the solar neighborhood. Compare the mass you find to the maximum molecular cloud mass observed in the Milky Way as reported by \href{http://adsabs.harvard.edu/abs/2005PASP..117.1403R}{Rosolowsky (2005, {\it PASP}, 117, 1403)}. \nocite{rosolowsky05b}\\
+\end{enumerate}
+
+
+Krumholz probset 4
+\item \textbf{Self-Similar Viscous Disks.}\\
+Consider a protostellar disk orbiting a star, governed by the usual viscous evolution equation
+\begin{displaymath}
+\frac{\partial\Sigma}{\partial t} = \frac{3}{\varpi} \frac{\partial}{\partial \varpi} \left[\varpi^{1/2} \frac{\partial}{\partial \varpi} \left(\nu \Sigma \varpi^{1/2}\right)\right],
+\end{displaymath}
+where $\Sigma$ is the surface density, $\varpi$ is the radius in cylindrical coordinates, and $\nu$ is the viscosity. Suppose that the viscosity is linearly proportional to the radius, $\nu = \nu_1 (\varpi/\varpi_1)$.
+\begin{enumerate}
+\item Non-dimensionalize the evolution equation by making a change of variables to the dimensionless position, time, and surface density $x=\varpi/\varpi_1$, $T = t/t_s$, $S = \Sigma/\Sigma_1$, where $t_s = \varpi_1^2/(3\nu_1)$.
+\item Use your non-dimensionalized equation to show that
+\begin{displaymath}
+\Sigma = \left(\frac{C}{3\pi \nu_1}\right) \frac{e^{-x/T}}{x T^{3/2}}
+\end{displaymath}
+is a solution of the equation for an arbitrary constant $C$.
+\item Calculate the total mass in the disk in terms of $C$, $t_s$, and $t$, and calculate the time rate of change of this mass. Based on your result, give a physical interpretation of what the constant $C$ means. (Hint: what units does $C$ have?)
+\item Plot $S$ versus $x$ at $T = 1, 1.5, 2$, and $4$. Give a physical interpretation of the results.\\
+\end{enumerate}
+
+\item {\bf A Simple T Tauri Disk Model.}\\
+In this problem we will construct a simple model of a T Tauri star disk in terms of a few parameters: the midplane density and temperature $\rho_m$ and $T_m$, the surface temperature $T_s$, the angular velocity $\Omega$, and the specific opacity of the disk material $\kappa$. We assume that the disk is very geometrically thin and optically thick, and that it is in thermal and mechanical equilibrium.
+\begin{enumerate}
+\item Assume that the disk radiates as a blackbody at temperature $T_s$. Show that the surface and midplane temperatures are related approximately by
+\begin{displaymath}
+T_m \approx \left(\frac{3}{8}\kappa\Sigma\right)^{1/4} T_s,
+\end{displaymath}
+where $\Sigma$ is the disk surface density.
+\item Suppose the disk is characterized by a standard $\alpha$ model, meaning that the viscosity $\nu=\alpha c_s H$, where $H$ is the scale height and $c_s$ is the sound speed. For such a disk the rate per unit area of the disk surface (counting each side separately) at which energy is released by viscous dissipation is $F_d=(9/8) \nu \Sigma \Omega^2$. Derive an estimate for the midplane temperature $T_m$ in terms of $\Sigma$, $\Omega$, and $\alpha$.
+\item Calculate the cooling time of the disk in terms of the orbital period. Should the behavior of the disk be closer to isothermal or adiabatic?
+\item Consider a disk with a mass of $0.03$ $\msun$ orbiting a $1$ $\msun$ star, which has $\kappa=3$ cm$^2$ g$^{-1}$ and $\alpha=0.01$. The disk runs from 1 to 20 AU, and the surface density varies with radius $\varpi$ as $\varpi^{-1}$. Use your model to express $\rho_m$, $T_m$, and $T_s$ as functions of the radius, normalized to 1 AU; i.e., derive results of the form $\rho_m = \rho_0 (\varpi/\mathrm{AU})^p$ for each of the quantities listed. Is your numerical model disk gravitationally unstable (i.e., $Q<1$) anywhere?
+\end{enumerate}
+
+
+Krumholz probset 5 
+
+\item {\bf Disk Dispersal by Photoionization.}\\
+Consider a disk around a T Tauri star of mass $M_*$ that produces an ionizing flux $\Phi$ photons s$^{-1}$. The flux ionizes the disk surface and raises the gas temperature to $10^4$ K, leading to a wind leaving the disk surface.
+\begin{enumerate}
+\item Close to the star the ionized gas remains bound due to the star's gravity. Estimate the gravitational radius $\varpi_g$ at which the ionized gas becomes unbound.
+\item Inside $\varpi_g$, we can think of the trapped ionized gas as forming a cloud of characteristic density $n_0$. Assuming this region is roughly in ionization balance, estimate $n_0$.
+\item At $\varpi_g$, a wind begins to flow off the disk surface. Because the ionizing photons are attenuated quickly as one moves away from the star, most of the mass loss comes from radii $\sim \varpi_g$. Make a rough estimate for the mass flux in the wind.
+\item Evaluate the mass flux numerically for a 1 $\msun$ star with an ionizing flux of $10^{41}$ s$^{-1}$. How long would this take to evaporate a $0.01$ $\msun$ disk around this star? Given the observed lifetimes of T Tauri star disks, are photoionization-induced winds a plausible candidate for the primary disk removal mechanism?
+\end{enumerate}
+
+\item {\bf Aerodynamics of Small Solids in a Disk.}\\
+Consider a solid sphere of radius $s$ and density $\rho_s$, orbiting a star of mass $M$ at a distance $\varpi$. The sphere is embedded in a protoplanetary disk, whose density and temperature where the particle is orbiting are $\rho_d$ and $T$. The gas pressure in the disk varies with distance from the star as $P\propto \varpi^{-n}$.
+\begin{enumerate}
+\item Because it is partially supported by gas pressure, gas in the disk orbits at a velocity slightly below the Keplerian velocity. Show that the difference between the gas velocity $v_g$ and the Keplerian velocity $v_K$ is
+\begin{displaymath}
+\Delta v = v_K - v_g \approx \frac{n c_g^2}{2v_K},
+\end{displaymath}
+where $c_g$ is the isothermal sound speed of the gas. You may assume that the deviation from Keplerian rotation is small.
+\item For a particle so small that the mean free path of gas atoms is $> s$ (which is the case for grains smaller than $\sim 10$ cm), the drag force it experiences as it moves through the gas at a relative velocity $v$ is
+\begin{displaymath}
+F_D = \frac{4\pi}{3} s^2 \rho_d v c_g.
+\end{displaymath}
+This is called the Epstein drag law. We define the stopping time $t_s$ as the ratio of the particle's momentum to $F_D$; this is the time required to reduce the particle velocity by one $e$-folding. Compute $t_s$ for a particle governed by Epstein drag.
+\item For small particles $t_s$ is much less than orbital period of a particle rotating at the Keplerian speed. In this case drag will force the particle's orbital velocity to match the sub-Keplerian orbital velocity of the gas, and since the particle is not supported by pressure as the disk is, it will drift inward. Estimate the equilibrium drift velocity, and the time required for the particle to drift into the star.
+\item Consider a particle of size $s=1$ cm and density $\rho_s = 3$ g cm$^{-3}$ orbiting at $r=1$ AU in a protoplanetary disk of density $\rho_d=10^{-9}$ g cm$^{-3}$, temperature $T=600$ K, and pressure index $n=3$. Verify that this particle is in the regime where $t_s$ is much less than the orbital period, and then numerically evaluate the time required for the particle to drift into the star. How does this compare to the observed time scale of planet formation and disk dissipation?
+\end{enumerate}
+
+
+\end{document}
