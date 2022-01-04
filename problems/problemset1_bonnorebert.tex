@@ -22,6 +22,8 @@
 
 \begin{document}
 
+\noindent\textbf{Problem Set 1: The Bonnor-Ebert Sphere}
+
 This problem set is based on Krumholz chapter 6
 (\url{https://github.com/Open-Astrophysics-Bookshelf/star_formation_notes})
 with additions and clarifications by Adam Ginsburg.
@@ -39,8 +41,9 @@ $P_{\mathrm{s}}$ on its surface.
 
 \begin{enumerate}
 \item For the moment, assume that the gas density inside the sphere is uniform.
-    Use the virial theorem to derive a relationship between $P_{\mathrm{s}}$
-    and the cloud radius $R$. 
+    \textbf{Use the virial theorem to derive a relationship between $P_{\mathrm{s}}$
+    and the cloud radius $R$. }
+
     Recall:
     $$\frac{1}{2}\ddot{I} = 2 (\mathcal{T} - \mathcal{T}_S) + \mathcal{W}$$
     $\mathcal{T}_S$ is the average surface pressure, given by
@@ -133,21 +136,24 @@ Hint: to evaluate the integral, it is helpful to use the isothermal Lane-Emden e
 
 \item Now that you have computed the Bonnor-Ebert mass and surface pressure, determine the size $r_0$ using the equation derived in Part \ref{item:r0}.
     You will need to determine the central density $\rho_c$ as well.  What is this value in g cm$^{-3}$ and particles per cubic centimeter?
-    Evaluate these numbers for both cases in Part \ref{item:m_be}.
+    Evaluate these numbers for both cases (`local' and `Galactic center') in Part \ref{item:m_be}.
 
 \item Plot the enclosed mass and the average enclosed density as a function of radius in real physical units.
     Plot these values for both cases in Part \ref{item:m_be}.
 
-\item Identify a good approximation of the density profile of the form:
+\item Identify (fit) an approximation to the Bonnor-Ebert density profile of the form:
     \begin{displaymath}
         \rho(r) = \rho_c \frac{(c \cdot r_0)^\alpha}{(c \cdot r_0)^\alpha + r^\alpha}
     \end{displaymath}
-
-    For $\alpha=2$, this equation is a Plummer profile.  More generally, this
-    is a power-law profile with a flattened central core; for $r>>r_0$, this
+    where $c$ and $\alpha$ are constants to be determined.  
+    For $\alpha=2$, this equation is called a Plummer profile.  More generally, this
+    is a power-law profile with a flattened central core; i.e., for $r>>r_0$, this
     profile approaches $\rho(r) = r^{-\alpha}$.  For $r<<r_0$, $\rho=\rho_c$.
 
+    
+
     Evaluate: over what range is this numerical approximation reasonable?
+    (use plots in your evaluation)
 \end{enumerate}
 
 \end{document}
