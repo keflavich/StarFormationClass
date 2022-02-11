@@ -51,32 +51,47 @@
                 F_\nu = \frac{2 \pi \cos\theta}{d^2} \int_{R_{min}}^{R_{max}} B_\nu(T(r)) r dr
             \end{equation}
 
-            to determine $\nu F_\nu$.  In this equation, $d$ is the distance to
-            the object, $R_{inner}$ and $R_{outer}$ are the inner \& outer disk
-            radii, and $B(T)$ is the Planck function.  
+            to determine $F_\nu$ in terms of constants of the system ($T_0$,
+            $R_0$, $\cos \theta$) and $\nu$.  In this equation, $d$ is the
+            distance to the object, $R_{inner}$ and $R_{outer}$ are the inner
+            \& outer disk radii, and $B(T)$ is the Planck function.  
 
-            Write the result in terms of the constant given in equation \ref{eqn:tpower} above.
 
             You can solve this by changing variables and coming up with an
             integral whose value you may not be able to evaluate, but which is
-            independent of frequency.
+            independent of frequency (and therefore can be treated as a constant).
             %Determine the leading constants by adopting $R_{inner} \rightarrow 0$ and $R_{outer}\rightarrow\infty$.
 
-        \item Determine the spectral index $\alpha$ as a function of the power-law index $q$.
-            What is $\alpha$ for a passively-heated flat disk, where $T\propto r^{-3/4}$?
-            \begin{equation}
-                \alpha \equiv \frac{d \log {\nu F_\nu}}{d \log \nu}
-            \end{equation}
+        \item Determine the spectral index $\alpha_{IR}$ as a function of the power-law index $q$.
+            What is $\alpha_{IR}$ for a passively-heated flat disk, where $T\propto r^{-3/4}$?
+
+            Unfortunately, the term \textit{spectral index} is highly overloaded, and there are two
+            definitions in common use by different wavelength astronomers:
+            \begin{eqnarray}
+                F_\nu  & =&  F_{\nu,0} \left(\frac{\nu}{\nu_0}\right)^{-\alpha_{radio}} \\
+                \alpha_{radio} & =&  - \frac{d \log {F_\nu}}{d \log \nu}  
+            \end{eqnarray}
+
+            $\alpha_{IR} = \alpha_{radio} - 1$
+            \begin{eqnarray}
+                \nu F_\nu  & =& \nu F_{\nu,0} \left(\frac{\nu}{\nu_0}\right)^{1-\alpha_{IR}} \\
+                \nu F_\nu  & =& F_{\nu,0} \left(\frac{\nu}{\nu_0}\right)^{-\alpha_{IR}} \\
+                \alpha_{IR} & =& - \frac{d \nu \log {F_\nu}}{d \log \nu}  = - 1 - \frac{d \log {F_\nu}}{d \log \nu}  
+            \end{eqnarray}
 
     \end{enumerate}
 
     \item
         Write down the radiative transfer equation of a two layer disk, the two
         layers being a dense inner layer centered on the mid-plane of the disk
-        and the outer layer being a thinner disk atmosphere. Consider each
+        and the outer layer being a thinner disk atmosphere.
+
+        Consider each
         layer as an infinite slab of constant thickness. Consider only
         radiative transfer perpendicular to the slab (reducing this to a 1-D
-        problem). First, write the equation for the intensity of light emitted
+        problem).
+
+        First, write the equation for the intensity of light emitted
         perpendicular to the slabs in terms of the temperature of the inner
         slab $T_2$, outer slab temperature $T_1$, the opacity per mass $\kappa_\nu$, the
         density of the outer slab $\rho_1$, and the thickness of the outer slab, $h_1$.
@@ -89,6 +104,48 @@ T1 > T2, & \tau_1 >> 1, & \tau_2 >> 1\\
 T1 < T2, & \tau_1 << 1, & \tau_2 >> 1
 \end{eqnarray}
 
+
+\item \textbf{Self-Similar Viscous Disks.}\\
+Consider a protostellar disk orbiting a star, governed by the usual viscous evolution equation
+\begin{displaymath}
+\frac{\partial\Sigma}{\partial t} = \frac{3}{\varpi} \frac{\partial}{\partial \varpi} \left[\varpi^{1/2} \frac{\partial}{\partial \varpi} \left(\nu \Sigma \varpi^{1/2}\right)\right],
+\end{displaymath}
+where $\Sigma$ is the surface density, $\varpi$ is the radius in cylindrical coordinates, and $\nu$ is the viscosity. Suppose that the viscosity is linearly proportional to the radius, $\nu = \nu_1 (\varpi/\varpi_1)$.
+\begin{enumerate}
+\item Non-dimensionalize the evolution equation by making a change of variables to the dimensionless position, time, and surface density $x=\varpi/\varpi_1$, $T = t/t_s$, $S = \Sigma/\Sigma_1$, where $t_s = \varpi_1^2/(3\nu_1)$.
+\item Use your non-dimensionalized equation to show that
+\begin{displaymath}
+\Sigma = \left(\frac{C}{3\pi \nu_1}\right) \frac{e^{-x/T}}{x T^{3/2}}
+\end{displaymath}
+is a solution of the equation for an arbitrary constant $C$.
+\item Calculate the total mass in the disk in terms of $C$, $t_s$, and $t$, and calculate the time rate of change of this mass. Based on your result, give a physical interpretation of what the constant $C$ means. (Hint: what units does $C$ have?)
+\item Plot $S$ versus $x$ at $T = 1, 1.5, 2$, and $4$. Give a physical interpretation of the results.\\
+\end{enumerate}
+
+% I don't understand this problem well enough to distribute it
+% \item {\bf A Simple T Tauri Disk Model.}\\
+% In this problem we will construct a simple model of a T Tauri star disk in terms of a few parameters: the midplane density and temperature $\rho_m$ and $T_m$, the surface temperature $T_s$, the angular velocity $\Omega$, and the specific opacity of the disk material $\kappa$. We assume that the disk is very geometrically thin and optically thick, and that it is in thermal and mechanical equilibrium.
+% \begin{enumerate}
+%     \item
+% 
+% Assume that the disk radiates as a blackbody at temperature $T_s$. Show that the surface and midplane temperatures are related approximately by
+% $$
+% T_m \approx \left(\frac{3}{8}\kappa\Sigma\right)^{1/4} T_s
+% $$
+% where $\Sigma$ is the disk surface density.
+% 
+% For an optically thick atmosphere, we use the diffusion approximation for energy transport:
+% 
+% $$F = \frac{c}{3 \kappa \rho} \frac{d}{dz}{E} = \frac{4 \sigma_{SB}}{3\kappa \rho} \frac{d}{dz}T^4$$
+% 
+% In thermal equilibrium, the flux is constant with position.  
+% 
+% You can assume $T_m >> T_s$ to solve for the flux at the midplane.  The surface flux per unit area is given by the Stephan-Boltzmann law.
+% 
+% \item Suppose the disk is characterized by a standard $\alpha$ model, meaning that the viscosity $\nu=\alpha c_s H$, where $H$ is the scale height and $c_s$ is the sound speed. For such a disk the rate per unit area of the disk surface (counting each side separately) at which energy is released by viscous dissipation is $F_d=(9/8) \nu \Sigma \Omega^2$. Derive an estimate for the midplane temperature $T_m$ in terms of $\Sigma$, $\Omega$, and $\alpha$.
+% \item Calculate the cooling time of the disk in terms of the orbital period. Should the behavior of the disk be closer to isothermal or adiabatic?
+% \item Consider a disk with a mass of $0.03$ $\msun$ orbiting a $1$ $\msun$ star, which has $\kappa=3$ cm$^2$ g$^{-1}$ and $\alpha=0.01$. The disk runs from 1 to 20 AU, and the surface density varies with radius $\varpi$ as $\varpi^{-1}$. Use your model to express $\rho_m$, $T_m$, and $T_s$ as functions of the radius, normalized to 1 AU; i.e., derive results of the form $\rho_m = \rho_0 (\varpi/\mathrm{AU})^p$ for each of the quantities listed. Is your numerical model disk gravitationally unstable (i.e., $Q<1$) anywhere?
+% \end{enumerate}
 
 
 
@@ -137,36 +194,7 @@ is called the Toomre parameter. Note that this stability condition refers only t
 \end{enumerate}
 
 
-Krumholz probset 4
-\item \textbf{Self-Similar Viscous Disks.}\\
-Consider a protostellar disk orbiting a star, governed by the usual viscous evolution equation
-\begin{displaymath}
-\frac{\partial\Sigma}{\partial t} = \frac{3}{\varpi} \frac{\partial}{\partial \varpi} \left[\varpi^{1/2} \frac{\partial}{\partial \varpi} \left(\nu \Sigma \varpi^{1/2}\right)\right],
-\end{displaymath}
-where $\Sigma$ is the surface density, $\varpi$ is the radius in cylindrical coordinates, and $\nu$ is the viscosity. Suppose that the viscosity is linearly proportional to the radius, $\nu = \nu_1 (\varpi/\varpi_1)$.
-\begin{enumerate}
-\item Non-dimensionalize the evolution equation by making a change of variables to the dimensionless position, time, and surface density $x=\varpi/\varpi_1$, $T = t/t_s$, $S = \Sigma/\Sigma_1$, where $t_s = \varpi_1^2/(3\nu_1)$.
-\item Use your non-dimensionalized equation to show that
-\begin{displaymath}
-\Sigma = \left(\frac{C}{3\pi \nu_1}\right) \frac{e^{-x/T}}{x T^{3/2}}
-\end{displaymath}
-is a solution of the equation for an arbitrary constant $C$.
-\item Calculate the total mass in the disk in terms of $C$, $t_s$, and $t$, and calculate the time rate of change of this mass. Based on your result, give a physical interpretation of what the constant $C$ means. (Hint: what units does $C$ have?)
-\item Plot $S$ versus $x$ at $T = 1, 1.5, 2$, and $4$. Give a physical interpretation of the results.\\
-\end{enumerate}
 
-\item {\bf A Simple T Tauri Disk Model.}\\
-In this problem we will construct a simple model of a T Tauri star disk in terms of a few parameters: the midplane density and temperature $\rho_m$ and $T_m$, the surface temperature $T_s$, the angular velocity $\Omega$, and the specific opacity of the disk material $\kappa$. We assume that the disk is very geometrically thin and optically thick, and that it is in thermal and mechanical equilibrium.
-\begin{enumerate}
-\item Assume that the disk radiates as a blackbody at temperature $T_s$. Show that the surface and midplane temperatures are related approximately by
-\begin{displaymath}
-T_m \approx \left(\frac{3}{8}\kappa\Sigma\right)^{1/4} T_s,
-\end{displaymath}
-where $\Sigma$ is the disk surface density.
-\item Suppose the disk is characterized by a standard $\alpha$ model, meaning that the viscosity $\nu=\alpha c_s H$, where $H$ is the scale height and $c_s$ is the sound speed. For such a disk the rate per unit area of the disk surface (counting each side separately) at which energy is released by viscous dissipation is $F_d=(9/8) \nu \Sigma \Omega^2$. Derive an estimate for the midplane temperature $T_m$ in terms of $\Sigma$, $\Omega$, and $\alpha$.
-\item Calculate the cooling time of the disk in terms of the orbital period. Should the behavior of the disk be closer to isothermal or adiabatic?
-\item Consider a disk with a mass of $0.03$ $\msun$ orbiting a $1$ $\msun$ star, which has $\kappa=3$ cm$^2$ g$^{-1}$ and $\alpha=0.01$. The disk runs from 1 to 20 AU, and the surface density varies with radius $\varpi$ as $\varpi^{-1}$. Use your model to express $\rho_m$, $T_m$, and $T_s$ as functions of the radius, normalized to 1 AU; i.e., derive results of the form $\rho_m = \rho_0 (\varpi/\mathrm{AU})^p$ for each of the quantities listed. Is your numerical model disk gravitationally unstable (i.e., $Q<1$) anywhere?
-\end{enumerate}
 
 
 % Krumholz probset 5 
