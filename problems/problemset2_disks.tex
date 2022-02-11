@@ -19,6 +19,9 @@
 \newcommand{\hangstar}{\makebox[0pt][l]{*}} % New command to create asterisks in tables which take up no horizontal space - this improves column spacing
 
 \usepackage{xspace} % Used for printing a trailing space better than using a tilde (~) using the \xspace command
+\newcommand{\veco}{{\bm \Omega}}
+\newcommand{\vecv}{\mathbf{v}}
+\newcommand{\ehat}{\hat{\mathbf{e}}}
 
 \begin{document}
 
@@ -122,30 +125,6 @@ is a solution of the equation for an arbitrary constant $C$.
 \item Plot $S$ versus $x$ at $T = 1, 1.5, 2$, and $4$. Give a physical interpretation of the results.\\
 \end{enumerate}
 
-% I don't understand this problem well enough to distribute it
-% \item {\bf A Simple T Tauri Disk Model.}\\
-% In this problem we will construct a simple model of a T Tauri star disk in terms of a few parameters: the midplane density and temperature $\rho_m$ and $T_m$, the surface temperature $T_s$, the angular velocity $\Omega$, and the specific opacity of the disk material $\kappa$. We assume that the disk is very geometrically thin and optically thick, and that it is in thermal and mechanical equilibrium.
-% \begin{enumerate}
-%     \item
-% 
-% Assume that the disk radiates as a blackbody at temperature $T_s$. Show that the surface and midplane temperatures are related approximately by
-% $$
-% T_m \approx \left(\frac{3}{8}\kappa\Sigma\right)^{1/4} T_s
-% $$
-% where $\Sigma$ is the disk surface density.
-% 
-% For an optically thick atmosphere, we use the diffusion approximation for energy transport:
-% 
-% $$F = \frac{c}{3 \kappa \rho} \frac{d}{dz}{E} = \frac{4 \sigma_{SB}}{3\kappa \rho} \frac{d}{dz}T^4$$
-% 
-% In thermal equilibrium, the flux is constant with position.  
-% 
-% You can assume $T_m >> T_s$ to solve for the flux at the midplane.  The surface flux per unit area is given by the Stephan-Boltzmann law.
-% 
-% \item Suppose the disk is characterized by a standard $\alpha$ model, meaning that the viscosity $\nu=\alpha c_s H$, where $H$ is the scale height and $c_s$ is the sound speed. For such a disk the rate per unit area of the disk surface (counting each side separately) at which energy is released by viscous dissipation is $F_d=(9/8) \nu \Sigma \Omega^2$. Derive an estimate for the midplane temperature $T_m$ in terms of $\Sigma$, $\Omega$, and $\alpha$.
-% \item Calculate the cooling time of the disk in terms of the orbital period. Should the behavior of the disk be closer to isothermal or adiabatic?
-% \item Consider a disk with a mass of $0.03$ $\msun$ orbiting a $1$ $\msun$ star, which has $\kappa=3$ cm$^2$ g$^{-1}$ and $\alpha=0.01$. The disk runs from 1 to 20 AU, and the surface density varies with radius $\varpi$ as $\varpi^{-1}$. Use your model to express $\rho_m$, $T_m$, and $T_s$ as functions of the radius, normalized to 1 AU; i.e., derive results of the form $\rho_m = \rho_0 (\varpi/\mathrm{AU})^p$ for each of the quantities listed. Is your numerical model disk gravitationally unstable (i.e., $Q<1$) anywhere?
-% \end{enumerate}
 
 
 
@@ -166,8 +145,8 @@ is a solution of the equation for an arbitrary constant $C$.
 
 
 
-\item \textbf{Toomre Instability.}\\
-Chapter \ref{ch:sflaw_th} discusses the Toomre instability as a potentially important factor in driving star formation. It may also be relevant to determining the maximum masses of molecular clouds. In this problem we will calculate the stability condition and related quantities. Consider a uniform, infinitely thin disk of surface density $\Sigma$ occupying the $z=0$ plane. The disk has a flat rotation curve with velocity $v_R$, so the angular velocity is $\veco=\Omega \ehat_z$, with $\Omega = v_R/r$ at a distance $r$ from the disk center. The velocity of the fluid in the $z=0$ plane is $\vecv$ and its vertically-integrated pressure is $\Pi=\int_{-\infty}^{\infty} P \, dz = \Sigma c_s^2$. 
+\item \textbf{BONUS: Toomre Instability.}\\
+Chapter 10 discusses the Toomre instability as a potentially important factor in driving star formation. It may also be relevant to determining the maximum masses of molecular clouds. In this problem we will calculate the stability condition and related quantities. Consider a uniform, infinitely thin disk of surface density $\Sigma$ occupying the $z=0$ plane. The disk has a flat rotation curve with velocity $v_R$, so the angular velocity is $\veco=\Omega \ehat_z$, with $\Omega = v_R/r$ at a distance $r$ from the disk center. The velocity of the fluid in the $z=0$ plane is $\vecv$ and its vertically-integrated pressure is $\Pi=\int_{-\infty}^{\infty} P \, dz = \Sigma c_s^2$. 
 \begin{enumerate}
 \item Consider a coordinate system co-rotating with the disk, centered at a distance $R$ from the disk center, oriented so that the $x$ direction is radially outward and the $y$ direction is in the direction of rotation. In this frame, the vertically-integrated equations of motion and the Poisson equation are
 \begin{eqnarray*}
@@ -195,6 +174,30 @@ is called the Toomre parameter. Note that this stability condition refers only t
 
 
 
+% I don't understand this problem well enough to distribute it
+\item BONUS: {\bf A Simple T Tauri Disk Model.}\\
+In this problem we will construct a simple model of a T Tauri star disk in terms of a few parameters: the midplane density and temperature $\rho_m$ and $T_m$, the surface temperature $T_s$, the angular velocity $\Omega$, and the specific opacity of the disk material $\kappa$. We assume that the disk is very geometrically thin and optically thick, and that it is in thermal and mechanical equilibrium.
+\begin{enumerate}
+    \item
+
+Assume that the disk radiates as a blackbody at temperature $T_s$. Show that the surface and midplane temperatures are related approximately by
+$$
+T_m \approx \left(\frac{3}{8}\kappa\Sigma\right)^{1/4} T_s
+$$
+where $\Sigma$ is the disk surface density.
+
+For an optically thick atmosphere, we use the diffusion approximation for energy transport:
+
+$$F = \frac{c}{3 \kappa \rho} \frac{d}{dz}{E} = \frac{4 \sigma_{SB}}{3\kappa \rho} \frac{d}{dz}T^4$$
+
+In thermal equilibrium, the flux is constant with position.  
+
+You can assume $T_m >> T_s$ to solve for the flux at the midplane.  The surface flux per unit area is given by the Stephan-Boltzmann law.
+
+\item Suppose the disk is characterized by a standard $\alpha$ model, meaning that the viscosity $\nu=\alpha c_s H$, where $H$ is the scale height and $c_s$ is the sound speed. For such a disk the rate per unit area of the disk surface (counting each side separately) at which energy is released by viscous dissipation is $F_d=(9/8) \nu \Sigma \Omega^2$. Derive an estimate for the midplane temperature $T_m$ in terms of $\Sigma$, $\Omega$, and $\alpha$.
+\item Calculate the cooling time of the disk in terms of the orbital period. Should the behavior of the disk be closer to isothermal or adiabatic?
+\item Consider a disk with a mass of $0.03$ $\msun$ orbiting a $1$ $\msun$ star, which has $\kappa=3$ cm$^2$ g$^{-1}$ and $\alpha=0.01$. The disk runs from 1 to 20 AU, and the surface density varies with radius $\varpi$ as $\varpi^{-1}$. Use your model to express $\rho_m$, $T_m$, and $T_s$ as functions of the radius, normalized to 1 AU; i.e., derive results of the form $\rho_m = \rho_0 (\varpi/\mathrm{AU})^p$ for each of the quantities listed. Is your numerical model disk gravitationally unstable (i.e., $Q<1$) anywhere?
+\end{enumerate}
 
 
 % Krumholz probset 5 
