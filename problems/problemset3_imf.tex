@@ -1,0 +1,136 @@
+\documentclass[twoside]{tufte-book} % Use the tufte-book class which in turn uses the tufte-common class
+\pdfoutput=1
+\usepackage{natbib}
+\usepackage{xspace}
+
+\usepackage{microtype} % Improves character and word spacing
+
+\usepackage{lipsum} % Inserts dummy text
+
+\usepackage{booktabs} % Better horizontal rules in tables
+\usepackage{epsdice}
+
+\usepackage{graphicx} % Needed to insert images into the document
+\graphicspath{{graphics/}} % Sets the default location of pictures
+\setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio} % Improves figure scaling
+
+\usepackage{fancyvrb} % Allows customization of verbatim environments
+\fvset{fontsize=\normalsize} % The font size of all verbatim text can be changed here
+
+\newcommand{\hangp}[1]{\makebox[0pt][r]{(}#1\makebox[0pt][l]{)}} % New command to create parentheses around text in tables which take up no horizontal space - this improves column spacing
+\newcommand{\hangstar}{\makebox[0pt][l]{*}} % New command to create asterisks in tables which take up no horizontal space - this improves column spacing
+
+\usepackage{xspace} % Used for printing a trailing space better than using a tilde (~) using the \xspace command
+\newcommand{\veco}{{\mathbf{\Omega}}\xspace}
+\newcommand{\vecv}{\mathbf{v}\xspace}
+\newcommand{\msun}{\ensuremath{\mathrm{M}_\odot}\xspace}
+\newcommand{\lsun}{\ensuremath{\mathrm{L}_\odot}\xspace}
+\newcommand{\ehat}{\hat{\mathbf{e}}\xspace}
+\usepackage{amsmath}
+\usepackage{mathtools}
+
+
+\begin{document}
+
+\noindent\textbf{Problem Set 3: IMF}
+
+\begin{enumerate}
+    \item The IMF is the function describing how many stars are born at each mass.
+        \begin{equation}
+            \xi \equiv \frac{dN}{dM}
+        \end{equation}
+        There are several common parametrizations.  We adopt $M_{max} = 120$ \msun
+        as the default for all.
+        \begin{enumerate}
+            \item Salpeter (you will find different $M_{min}$ in use in
+                different locations in the literature; we adopt 0.03 here
+                to simplify comparisons):
+            \begin{equation}
+                \xi = M^{-2.35}, M_{min}=0.03 \msun
+            \end{equation}
+
+            \item Kroupa (eqn 2 of 2001MNRAS.322..231K):\\
+            $$ \xi = M^{-\alpha}
+            \begin{cases}
+                  \alpha=0.3, & 0.01 \leq M/\msun < 0.08 \\
+                  \alpha=1.3, & 0.08 \leq M/\msun < 0.5 \\
+                  \alpha=2.3, & 0.5 \leq M/\msun < M_{max}
+            \end{cases}
+            $$
+
+            \item Chabrier (Eqn 18 of 2003PASP..115..763C):\\
+                $$
+            \begin{cases}
+                \xi(\log M) \equiv \frac{dN}{d\log M} = A \exp\left[(\log M - \log M_c)^2/2\sigma^2\right]  \\
+                A = 0.086, M_c = 0.22, \sigma=0.57 &  M\leq1 \msun\\
+                \xi(\log M) = A M^{-\Gamma}   \\
+                \Gamma = 1.3, A = 4.43 & M>\msun
+            \end{cases}
+            $$
+    
+
+        \end{enumerate}
+    Plot these IMFs.
+
+    You will perform calculations using these equations to infer properties of stellar
+    populations.  For each distribution, compute:
+    \begin{enumerate}
+        \item What is the average mass?
+        \item What is the average mass of stars with $M>8\msun$?
+        \item What is the ratio of the number of high-mass to low-mass stars?
+            (use M=8 \msun as the dividing mass)
+        \item What is the ratio of the \emph{mass} of high-mass to low-mass stars?
+        \item Do these numbers change if you change $M_{max}$ to 100 \msun?  To 1000 \msun?
+        \item Do these numbers change if you change $M_{min}$ to 0.03 \msun?  To 0.3 \msun?
+        \item For a cluster of 1000 stars, how many would you expect to be
+            $M>8\msun$ (able to go supernova)?
+        \item In an `optimal distribution function', the cluster mass to maximum star mass
+            is fixed by defining $\int_{M_{max,cl}}^{M_{max}} \xi dM = 1$,
+            where $M_{max}$ is the maximum possible mass for a star and $M_{max,cl}$ is
+            the most massive star in the cluster.
+            From this definition, determine how many stars must be in a cluster
+            to form one 10 \msun star or one 100 \msun star.
+        \item What \emph{mass} of cluster is required to produce a star of that mass?
+        \item In a probability distribution function, there is only a fix likelihood
+            of forming a star of a given mass.  What is the minimum cluster mass
+            required to have a $>95\%$ ($>63.21\%$) probability of forming at least one $\geq100$
+            \msun star?\\
+            Recall that the likelihood of rolling at least one six after 100 rolls
+            is equal to one minus the likelihood of rolling \emph{no} sixes in 100 rolls
+            i.e., $P(\ge 1 \epsdice{6}) = 1- \left(\frac{5}{6}\right)^{100}$.
+        \item Compare the results from the ODF and the PDF for the presence of
+            a $M>100\msun$ star.  How can you interpret the difference?
+        \item What is the expected light-to-mass ratio of each distribution
+            assuming $L = \lsun \left(\frac{M}{\msun}\right)^{3}$?
+        \item The IMF is the \emph{system} IMF.  If we are primarily interested
+            in the luminosity of a system, splitting the mass between multiple
+            stars can make a big difference.  If we assume every star system
+            consists of an equal-mass binary, what is the effect on the L/M ratio?
+            Is this a reasonable approximation to the multiplicity fraction?
+        \item For an ODF, the effective maximum stellar mass can be smaller.
+            If all star-forming events in a galaxy occur in Taurus-like
+            star-forming regions, with $M_*=100\msun$, what is the maximum
+            mass?  What is the resulting L/M ratio?  Recall that this is
+            the \emph{maximum} the L/M will be in such a galaxy.
+    \end{enumerate}
+
+    You may choose to use external resources, like the \texttt{imf} package,
+    but it's a good idea to try to solve some of these - at least the simple
+    Salpeter IMF - by hand.
+
+\end{enumerate}
+
+\end{document}
+
+
+% 1) Let the students contemplate on what the implications are for star formation and galactic astrophysics if the IMF is either a probability density distribution function or an optimal distribution function. 
+% 
+% 2) Calculate the mmax--Mecl relation from the IMF.
+% 
+% 3) Assume the mmax--Mecl relation: calculate the average stellar mass of the embedded cluster with increasing mass of stars in the embedded cluster.
+% 
+% 4) Assume the IMF varies as formulated by Marks et al. (2012 - for an update see https://ui.adsabs.harvard.edu/abs/2021A%26A...655A..19Y/abstract
+% 
+% Calculate the ratio of mass in stars above 1 and 10 Msun relative to the total mass in the stellar population as a function of the metallicity and density of the embedded cluster. Make a two dimensional grid and discuss the results.
+% 
+% 5) Discuss how one can calculate the galaxy-wide IMF and which constraints need to be considered. 
