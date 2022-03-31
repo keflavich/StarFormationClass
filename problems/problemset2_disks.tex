@@ -19,13 +19,14 @@
 \newcommand{\hangstar}{\makebox[0pt][l]{*}} % New command to create asterisks in tables which take up no horizontal space - this improves column spacing
 
 \usepackage{xspace} % Used for printing a trailing space better than using a tilde (~) using the \xspace command
-\newcommand{\veco}{{\bm \Omega}}
+\newcommand{\veco}{{\mathbf{\Omega}}}
 \newcommand{\vecv}{\mathbf{v}}
+\newcommand{\msun}{\ensuremath{\textbf{M}_\odot}}
 \newcommand{\ehat}{\hat{\mathbf{e}}}
 
 \begin{document}
 
-\noindent\textbf{Problem Set 3: Disks}
+\noindent\textbf{Problem Set 2: Disks}
 
 
 
@@ -71,16 +72,21 @@
             Unfortunately, the term \textit{spectral index} is highly overloaded, and there are two
             definitions in common use by different wavelength astronomers:
             \begin{eqnarray}
-                F_\nu  & =&  F_{\nu,0} \left(\frac{\nu}{\nu_0}\right)^{-\alpha_{radio}} \\
-                \alpha_{radio} & =&  - \frac{d \log {F_\nu}}{d \log \nu}  
+                F_\nu  & =&  F_{\nu,0} \left(\frac{\nu}{\nu_0}\right)^{\alpha_{radio}} \\
+                \alpha_{radio} & = &  - \frac{d \log {F_\nu}}{d \log \nu}\\
+                F_\nu  & =&  F_{\nu,0} \left(\frac{\nu}{\nu_0}\right)^{\alpha_{IR} - 1} \\
+                \alpha_{IR} & = & \frac{d \log \nu F_\nu}{d \log \nu}
             \end{eqnarray}
 
-            $\alpha_{IR} = \alpha_{radio} - 1$
-            \begin{eqnarray}
-                \nu F_\nu  & =& \nu F_{\nu,0} \left(\frac{\nu}{\nu_0}\right)^{1-\alpha_{IR}} \\
-                \nu F_\nu  & =& F_{\nu,0} \left(\frac{\nu}{\nu_0}\right)^{-\alpha_{IR}} \\
-                \alpha_{IR} & =& - \frac{d \nu \log {F_\nu}}{d \log \nu}  = - 1 - \frac{d \log {F_\nu}}{d \log \nu}  
-            \end{eqnarray}
+            You can verify that this gives:
+            $$\alpha_{IR} - 1= \alpha_{radio}$$
+            and you can check the definition of $\alpha_{radio}$ on wikipedia or in any radio textbook
+            and the definitino of $\alpha_{IR}$ from Equation (1) of the Williams \& Cieza 2011 ARA\&A.
+            %\begin{eqnarray}
+            %    \nu F_\nu  & =& \nu F_{\nu,0} \left(\frac{\nu}{\nu_0}\right)^{-\alpha_{radio}} \\
+            %    \nu F_\nu  & =& F_{\nu,0} \left(\frac{\nu}{\nu_0}\right)^{-\alpha_{IR}-1} \\
+            %    \alpha_{IR} & =& - \frac{d \nu \log {F_\nu}}{d \log \nu}  = - 1 - \frac{d \log {F_\nu}}{d \log \nu}  
+            %\end{eqnarray}
 
     \end{enumerate}
 
