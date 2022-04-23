@@ -21,7 +21,7 @@
 \newcommand{\hangstar}{\makebox[0pt][l]{*}} % New command to create asterisks in tables which take up no horizontal space - this improves column spacing
 
 \usepackage{xspace} % Used for printing a trailing space better than using a tilde (~) using the \xspace command
-\newcommand{\veco}{{\mathbf{\Omega}}\xspace}
+\newcommand{\veco}{\ensuremath{\mathbf{\Omega}}\xspace}
 \newcommand{\vecv}{\mathbf{v}\xspace}
 \newcommand{\msun}{\ensuremath{\mathrm{M}_\odot}\xspace}
 \newcommand{\lsun}{\ensuremath{\mathrm{L}_\odot}\xspace}
@@ -52,7 +52,7 @@
             \item Kroupa (eqn 2 of 2001MNRAS.322..231K):\\
             $$ \xi = M^{-\alpha}
             \begin{cases}
-                  \alpha=0.3, & 0.01 \leq M/\msun < 0.08 \\
+                  \alpha=0.3, & 0.03 \leq M/\msun < 0.08 \\
                   \alpha=1.3, & 0.08 \leq M/\msun < 0.5 \\
                   \alpha=2.3, & 0.5 \leq M/\msun < M_{max}
             \end{cases}
@@ -84,7 +84,7 @@
         \item Do these numbers change if you change $M_{min}$ to 0.03 \msun?  To 0.3 \msun?
         \item For a cluster of 1000 stars, how many would you expect to be
             $M>8\msun$ (able to go supernova)?
-        \item In an `optimal distribution function', the cluster mass to maximum star mass
+        \item In an `optimal distribution function' (ODF), the cluster mass to maximum star mass
             is fixed by defining $\int_{M_{max,cl}}^{M_{max}} \xi dM = 1$,
             where $M_{max}$ is the maximum possible mass for a star and $M_{max,cl}$ is
             the most massive star in the cluster.
@@ -119,6 +119,132 @@
     Salpeter IMF - by hand.
 
 \end{enumerate}
+
+
+Numerical Answers:
+\begin{enumerate}
+    \item
+\begin{enumerate}
+    \item 
+        Salpeter mean mass: 0.11 \\
+ChabrierPowerLaw mean mass: 0.67 \\
+Kroupa mean mass: 0.43
+\item Salpeter Mean M(M>8) = 19.40\\
+ChabrierPowerLaw Mean M(M>8) = 19.87\\
+Kroupa Mean M(M>8) = 19.87
+\item Salpeter N(M>8) / N(tot) = 0.0001, N(M>8) / N(low) = 0.0005 \\ 
+ChabrierPowerLaw N(M>8) / N(tot) = 0.0079, N(M>8) / N(low) = 0.0085 \\
+Kroupa N(M>8) / N(tot) = 0.0040, N(M>8) / N(low) = 0.0046
+\item Salpeter M(M>8) / M(tot) = 0.0917, M(M>8) / M(low) = 0.1010 \\
+ChabrierPowerLaw M(M>8) / M(tot) = 0.2491, M(M>8) / M(low) = 0.3318 \\
+Kroupa M(M>8) / M(tot) = 0.2094, M(M>8) / M(low) = 0.2648
+\item Mmax = 100 \\
+Salpeter mean mass: 0.11 \\
+Salpeter M(M>8) / M(tot) = 0.0882, M(M>8) / M(low) = 0.0968 \\
+Salpeter N(M>8) / N(tot) = 0.0001, N(M>8) / N(low) = 0.0005 \\
+ChabrierPowerLaw mean mass: 0.66 \\
+ChabrierPowerLaw M(M>8) / M(tot) = 0.2406, M(M>8) / M(low) = 0.3169 \\
+ChabrierPowerLaw N(M>8) / N(tot) = 0.0079, N(M>8) / N(low) = 0.0084 \\
+Kroupa mean mass: 0.43 \\
+Kroupa M(M>8) / M(tot) = 0.2019, M(M>8) / M(low) = 0.2530 \\
+Kroupa N(M>8) / N(tot) = 0.0039, N(M>8) / N(low) = 0.0046 \\
+ \\
+Mmax = 1000 \\
+Salpeter mean mass: 0.11 \\
+Salpeter M(M>8) / M(tot) = 0.1185, M(M>8) / M(low) = 0.1345 \\
+Salpeter N(M>8) / N(tot) = 0.0001, N(M>8) / N(low) = 0.0005 \\
+ChabrierPowerLaw mean mass: 0.73 \\
+ChabrierPowerLaw M(M>8) / M(tot) = 0.3133, M(M>8) / M(low) = 0.4563 \\
+ChabrierPowerLaw N(M>8) / N(tot) = 0.0081, N(M>8) / N(low) = 0.0087 \\
+Kroupa mean mass: 0.47 \\
+Kroupa M(M>8) / M(tot) = 0.2670, M(M>8) / M(low) = 0.3643 \\
+Kroupa N(M>8) / N(tot) = 0.0041, N(M>8) / N(low) = 0.0047 
+
+\item % (f)
+    Mmax = 120, Mmin=0.03 \\
+Salpeter mean mass: 0.11 \\
+Salpeter M(M>8) / M(tot) = 0.0917, M(M>8) / M(low) = 0.1010 \\
+Salpeter N(M>8) / N(tot) = 0.0005, N(M>8) / N(low) = 0.0005 \\
+ChabrierPowerLaw mean mass: 0.67 \\
+ChabrierPowerLaw M(M>8) / M(tot) = 0.2491, M(M>8) / M(low) = 0.3318 \\
+ChabrierPowerLaw N(M>8) / N(tot) = 0.0084, N(M>8) / N(low) = 0.0085 \\
+Kroupa mean mass: 0.43 \\
+Kroupa M(M>8) / M(tot) = 0.2094, M(M>8) / M(low) = 0.2648 \\
+Kroupa N(M>8) / N(tot) = 0.0046, N(M>8) / N(low) = 0.0046 \\
+ \\
+Mmax = 120, Mmin=0.3 \\
+Salpeter mean mass: 1.02 \\
+Salpeter M(M>8) / M(tot) = 0.2212, M(M>8) / M(low) = 0.2841 \\
+Salpeter N(M>8) / N(tot) = 0.0116, N(M>8) / N(low) = 0.0117 \\
+ChabrierPowerLaw mean mass: 1.37 \\
+ChabrierPowerLaw M(M>8) / M(tot) = 0.2817, M(M>8) / M(low) = 0.3922 \\
+ChabrierPowerLaw N(M>8) / N(tot) = 0.0194, N(M>8) / N(low) = 0.0198 \\
+Kroupa mean mass: 1.18 \\
+Kroupa M(M>8) / M(tot) = 0.2588, M(M>8) / M(low) = 0.3491 \\
+Kroupa N(M>8) / N(tot) = 0.0046, N(M>8) / N(low) = 0.0156 
+
+\item % (g)
+Salpeter          N(M>8) = 0.52  M(N=1000)=1.1e+02\\
+ChabrierPowerLaw  N(M>8) = 8.39  M(N=1000)=6.7e+02\\
+Kroupa            N(M>8) = 4.57  M(N=1000)=4.3e+02\\
+\\
+What about for M=1000? \\
+Salpeter          NSN = N(M>8) = 4.7\\
+ChabrierPowerLaw  NSN = N(M>8) = 12.5\\
+Kroupa            NSN = N(M>8) = 10.5
+
+
+\item %(h)
+Salpeter: nstars to make 10 msun = 2638\\
+ChabrierPowerLaw: nstars to make 10 msun = 160\\
+Kroupa: nstars to make 10 msun = 295\\
+\\
+Salpeter: nstars to make 100 msun = 261252\\
+ChabrierPowerLaw: nstars to make 100 msun = 14615\\
+Kroupa: nstars to make 100 msun = 26818
+
+\item %(i)
+
+Salpeter: mass(100Msun) = 2.9e+04, N(100msun) = 261252 \\ 
+ChabrierPowerLaw: mass(100Msun) = 9.8e+03, N(100msun) = 14615 \\ 
+Kroupa: mass(100Msun) = 1.2e+04, N(100msun) = 26818
+
+
+\item % (j)
+
+ODF Salpeter P(>100) = 0.9999961722830673, N* = 1/(1-P(>100)=261252\\
+ODF Salpeter: M = 2.9e+04\\
+PDF Salpeter: Min mass for >1 100 Msun star at 95\%: 8.6e+04 nstars=782640\\
+PDF Salpeter: Min mass for >1 100 Msun star at 62.3\%: 2.9e+04 nstars=261237\\
+\\
+ODF ChabrierPowerLaw P(>100) = 0.999931578294786, N* = 1/(1-P(>100)=14615\\
+ODF ChabrierPowerLaw: M = 9.8e+03\\
+PDF ChabrierPowerLaw: Min mass for >1 100 Msun star at 95\%: 2.9e+04 nstars=43781\\
+PDF ChabrierPowerLaw: Min mass for >1 100 Msun star at 62.3\%: 9.8e+03 nstars=14613\\
+\\
+ODF Kroupa P(>100) = 0.9999627129687122, N* = 1/(1-P(>100)=26818\\
+ODF Kroupa: M = 1.2e+04\\
+PDF Kroupa: Min mass for >1 100 Msun star at 95\%: 3.5e+04 nstars=80340\\
+PDF Kroupa: Min mass for >1 100 Msun star at 62.3\%: 1.2e+04 nstars=26816\\
+
+
+
+\item Answer the question from the above data
+\item %(l)
+    Salpeter: L/M = 177.3 \\
+ChabrierPowerLaw: L/M = 571.2 \\
+Kroupa: L/M = 424.5
+\item %(m)
+    Salpeter: L/M = 44.3 \\
+ChabrierPowerLaw: L/M = 142.8 \\
+Kroupa: L/M = 106.1
+\item %(n)
+Salpeter: Mmax = 4.6 L/M = 0.9 \\
+ChabrierPowerLaw: Mmax = 9.5 L/M = 8.6 \\
+Kroupa: Mmax = 8.3 L/M = 5.7
+\end{enumerate}
+\end{enumerate}
+
 
 \end{document}
 
