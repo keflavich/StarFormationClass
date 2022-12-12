@@ -1,7 +1,7 @@
-AST 7939: Star Formation
-========================
+AST 4930/7939: Star Formation
+=============================
 
-AKA "AST 7939: Prostars", where we are in favor of stars.
+AKA "AST 4930/7939: Prostars", where we are in favor of stars.
 
 The course is based on Mark Krumholz's book ["Notes on Star Formation"](https://github.com/Open-Astrophysics-Bookshelf/star_formation_notes),
 [Palla & Stahler's "The Formation of Stars"](https://ui.adsabs.harvard.edu/abs/2004fost.book.....S/abstract),
