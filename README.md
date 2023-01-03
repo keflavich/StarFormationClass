@@ -14,6 +14,7 @@ the reader.
 Lectures
 --------
 
+ 1. [Introduction / Syllabus](https://www.dropbox.com/s/s3gzqysitzpxhow/Lecture1_SyllabusAndIntro.pdf?dl=0)
  1. [Molecular Clouds](https://www.dropbox.com/s/whyqtx6y0om4hto/molecular_clouds_Williams_2023.pdf?dl=0)
  1. [Gravitationally Unstable Cores](https://www.dropbox.com/s/dj245xf1uq9d380/Lecture%201%20-%20Unstable%20Cores.pdf?dl=0)
  1. [Gravitational Collapse](https://www.dropbox.com/s/jh4gb5zso9m9b3m/Lecture%202%20-%20Gravitational%20Collapse.pdf?dl=0)
