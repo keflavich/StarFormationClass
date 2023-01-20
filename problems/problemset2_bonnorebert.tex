@@ -55,6 +55,9 @@ $P_{\mathrm{s}}$ on its surface.
     assuming a sphere with a constant surface pressure term. \\
     $\mathcal{W}$ is the gravitational potential
     $$\mathcal{W} = - a \frac{GM^2}{R}$$
+    $\mathcal{T}$ is the thermal pressure, $\frac{3}{2} M c_s^2$.
+
+    Hint: What is $\ddot{I}$, the second time derivative of the moment of inertia, for a hydrostatic sphere?
 
 \item Show that there is a maximum surface pressure $P_{\mathrm{s,max}}$ for
     which virial equilibrium is possible and derive its value.
@@ -117,7 +120,8 @@ For further details about the input and output, look at the scipy documentation.
 
 
 
-\item The total mass enclosed out to a radius $R$ is
+\item (OPTIONAL IN 2023) The total mass enclosed out to a radius $R$ is
+    \label{item:totalmass}
 \begin{displaymath}
 M = 4\pi \int_0^R \rho r^2 \, dr.
 \end{displaymath}
@@ -134,21 +138,25 @@ $P_s$ is the pressure at the surface, and the pressure contrast is the same as t
 Hint: to evaluate the integral, it is helpful to use the isothermal Lane-Emden equation to substitute.
 
 
-\item Plot the dimensionless mass $m = M/(c_s^4/\sqrt{G^3 P_s})$ versus the dimensionless density contrast $\rho_s/\rho_c=e^{-\psi_s}$, where $\psi_s$ is the value of $\psi$ at $\xi=\xi_s$. You will see that $m$ reaches a finite maximum value $m_{\mathrm{max}}$ at a particular value of $\rho_c/\rho_s$. Numerically determine $m_{\mathrm{max}}$, along with the density contrast $\rho_c/\rho_s$ at which it occurs.
-\item The existence of a finite maximum $m$ implies that, for a given dimensional mass $M$, there is a maximum surface pressure $P_s$ at which a cloud of that mass can be in hydrostatic equilibrium. Solve for this maximum, and compare your result to the result you obtained in part (a).
-\item Conversely, for a given surface pressure $P_s$ and sound speed $c_s$ there exists a maximum mass at which the cloud can be in hydrostatic equilibrium, called the Bonnor-Ebert mass $M_{\mathrm{BE}}$. Obtain an expression for $M_{\mathrm{BE}}$ in terms of $P_s$ and $c_s$. In a typical low-mass star-forming region, the surface pressure on a core might be $P_{\mathrm{s}}/k_{\rm B} = 3\times 10^5$ K cm$^{-3}$. Compute this mass for a core with a temperature of 10 K, assuming the standard mean molecular weight $\mu=2.3$.\\
+\item (OPTIONAL IN 2023) Plot the dimensionless mass $m = M/(c_s^4/\sqrt{G^3 P_s})$ versus the dimensionless density contrast $\rho_s/\rho_c=e^{-\psi_s}$, where $\psi_s$ is the value of $\psi$ at $\xi=\xi_s$. You will see that $m$ reaches a finite maximum value $m_{\mathrm{max}}$ at a particular value of $\rho_c/\rho_s$. Numerically determine $m_{\mathrm{max}}$, along with the density contrast $\rho_c/\rho_s$ at which it occurs.
+\item (OPTIONAL IN 2023) The existence of a finite maximum $m$ implies that, for a given dimensional mass $M$, there is a maximum surface pressure $P_s$ at which a cloud of that mass can be in hydrostatic equilibrium. Solve for this maximum, and compare your result to the result you obtained in part (a).
+\item (OPTIONAL IN 2023) Conversely, for a given surface pressure $P_s$ and sound speed $c_s$ there exists a maximum mass at which the cloud can be in hydrostatic equilibrium, called the Bonnor-Ebert mass $M_{\mathrm{BE}}$. Obtain an expression for $M_{\mathrm{BE}}$ in terms of $P_s$ and $c_s$. In a typical low-mass star-forming region, the surface pressure on a core might be $P_{\mathrm{s}}/k_{\rm B} = 3\times 10^5$ K cm$^{-3}$. Compute this mass for a core with a temperature of 10 K, assuming the standard mean molecular weight $\mu=2.3$.\\
     By contrast, in Galactic centers and dense star forming regions in the early universe, the temperature and pressure may have been higher.  What is the Bonnor-Ebert mass for $P_{\mathrm{s}}/k_{\rm B} = 10^7$ K cm$^{-3}$ and T=$50$ K?
     \label{item:m_be}
 
 
-\item Now that you have computed the Bonnor-Ebert mass and surface pressure, determine the size $r_0$ using the equation derived in Part \ref{item:r0}.
+\item (OPTIONAL IN 2023) Now that you have computed the Bonnor-Ebert mass and surface pressure, determine the size $r_0$ using the equation derived in Part \ref{item:r0}.
     You will need to determine the central density $\rho_c$ as well.  What is this value in g cm$^{-3}$ and particles per cubic centimeter?
     Evaluate these numbers for both cases (`local' and `Galactic center') in Part \ref{item:m_be}.
 
-\item Plot the enclosed mass and the average enclosed density as a function of radius in real physical units.
+\item (OPTIONAL IN 2023) Plot the enclosed mass and the average enclosed density as a function of radius in real physical units.
     Plot these values for both cases in Part \ref{item:m_be}.
+    You will need a solution to Part \ref{item:totalmass} of the form
+$$M(\xi') = \frac{c_s^4}{(4 \pi  P_S  G^3 )^{1/2}} e^{-\psi_S/2} \left(  \xi^2 \frac{d\psi}{d\xi}\right)_0^{\xi'} $$
+This version gives the mass evaluated at any given radius, while Part \ref{item:totalmass} only provided $M$ evaluated at the surface.
+    
 
-\item Identify (fit) an approximation to the Bonnor-Ebert density profile of the form:
+\item (OPTIONAL IN 2023) Identify (fit) an approximation to the Bonnor-Ebert density profile of the form:
     \begin{displaymath}
         \rho(r) = \rho_c \frac{(c \cdot r_0)^\alpha}{(c \cdot r_0)^\alpha + r^\alpha}
     \end{displaymath}
