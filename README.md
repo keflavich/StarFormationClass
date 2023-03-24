@@ -34,4 +34,4 @@ Lectures
  1. [The IMF](https://www.dropbox.com/s/p1shb2l71v7c7b4/imf.pdf?dl=0) | [keynote](https://www.dropbox.com/s/1idbu6lg9k40byg/lecture18_imf.key?dl=0)
  1. [Turbulence](https://www.dropbox.com/s/5g0rk3876h1e1ri/turbulence.pdf?dl=0) (incomplete) | [keynote](https://www.dropbox.com/s/9mjgrm8vpomgt06/lecture19_turbulence.key?dl=0)
  1. [Shocks](https://www.dropbox.com/s/idwsijirl3dr8b7/lecture15_shocks.pdf?dl=0) | [keynote](https://www.dropbox.com/s/tp9uvtcnnriqla2/shocks.key?dl=0)
- 1. [Galactic Center Star Formation](https://www.dropbox.com/s/6drqhowdilckfge/GalacticCenterStarFormation.pdf?dl=0) 
+ 1. [Galactic Center Star Formation](https://www.dropbox.com/s/6drqhowdilckfge/GalacticCenterStarFormation.pdf?dl=0) | [keynote](https://www.dropbox.com/s/5dyqyi2mir3uwqu/galacticcenterstarformation.key?dl=0)
