@@ -1,7 +1,7 @@
-AST 4930/7939: Star Formation
-=============================
+AST 7939: Star Formation
+========================
 
-AKA "AST 4930/7939: Prostars", where we are in favor of stars.
+AKA "AST 7939: Prostars", where we are in favor of stars.
 
 The course is based on Mark Krumholz's book ["Notes on Star Formation"](https://github.com/Open-Astrophysics-Bookshelf/star_formation_notes),
 [Palla & Stahler's "The Formation of Stars"](https://ui.adsabs.harvard.edu/abs/2004fost.book.....S/abstract),
@@ -28,7 +28,7 @@ Lectures
  1. [Protoplanetary Disks](https://www.dropbox.com/s/d4qz1d2s54derxg/lecture10_protoplanetary_disks_AG.pdf?dl=0) | [keynote](https://www.dropbox.com/s/1dgy73lg7d2wu9p/lecture11_protoplanetary_disks_AG_2023.key?dl=0)
  1. [Dust to Planetesimals](https://www.dropbox.com/s/q84m53t7c0673qg/lecture11_dust2planetesimals_ag_feb2022.pdf?dl=0) | [keynote](https://www.dropbox.com/s/gai3i9k2hdyf53w/lecture12_dust2planetesimals_AG_2023.key?dl=0)
  1. [Outflows](https://www.dropbox.com/s/upc5d7xe028nuzl/lecture12_outflows_AG.key.pdf?dl=0) | [keynote](https://www.dropbox.com/s/v9dw8g1x20p7ail/lecture14_outflows_AG_2023.key?dl=0)
-  1. [High Mass Star Formation](https://www.dropbox.com/s/6os8gkft7cwjy6a/highmass_starformation.pdf?dl=0) | [keynote](https://www.dropbox.com/s/o0zpj1hpohjgxeu/lecture15_highmass_starformation_2023.key?dl=0)
+ 1. [High Mass Star Formation](https://www.dropbox.com/s/6os8gkft7cwjy6a/highmass_starformation.pdf?dl=0) | [keynote](https://www.dropbox.com/s/o0zpj1hpohjgxeu/lecture15_highmass_starformation_2023.key?dl=0)
  1. [Multiple Star Systems](https://www.dropbox.com/s/nwbje6nbuceafmf/lecture13multiples.key.pdf?dl=0) | [keynote](https://www.dropbox.com/s/t9p3m2ts9u4b0hm/lecture16multiples_AG_2023.key?dl=0) 
  1. [Clusters](https://www.dropbox.com/s/w9kdblusr44ibh3/lecture14_clusters_fromMegeath_adam2022.key.pdf?dl=0) | [keynote](https://www.dropbox.com/s/kc110cd641pzgmz/lecture17_clusters_fromMegeath_adam2023.key?dl=0)
  1. [The IMF](https://www.dropbox.com/s/p1shb2l71v7c7b4/imf.pdf?dl=0) | [keynote](https://www.dropbox.com/s/1idbu6lg9k40byg/lecture18_imf.key?dl=0)
