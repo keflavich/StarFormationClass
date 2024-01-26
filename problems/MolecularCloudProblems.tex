@@ -103,10 +103,12 @@ temperature in Kelvin.
             % n_1/n_2 = g_1/g_2 * e^(-E1/T)/e^(-E2/T)
             % g = 2J + 1
             % 3 * np.exp(-5.5/10) / (7 * np.exp(-33.2/10)) = 6.8
+            % J=1 to J=3 ratio = 6.8, inverse is 0.14
         \item (G) What is this value for a cloud with density $n(H_2)=10^2 \mathrm{cm}^{-3}$?
             % n_crit = 3.5e4
-            % value is decreased by 1/(1+ncrit/n) = 0.0028
-            % result is 0.019
+            % eqn 1.16 of Krumholz
+            % value of upper/lower is decreased by 1/(1+ncrit/n) = 0.14 / (1 + 3.5e4/1e2) = 0.0004
+            % inverse is ~2500
         \item (G) Should CO 3-2 be detectable in a typical molecular cloud?  Why or why not?
     \end{enumerate}
 
