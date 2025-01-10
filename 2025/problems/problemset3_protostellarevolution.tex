@@ -1,0 +1,196 @@
+%\documentclass[twoside]{tufte-book} % Use the tufte-book class which in turn uses the tufte-common class
+\documentclass{article}
+\pdfoutput=1
+\usepackage{url}
+\usepackage{graphicx}
+\usepackage{natbib}
+\usepackage{xspace}
+
+\usepackage{microtype} % Improves character and word spacing
+
+\usepackage{lipsum} % Inserts dummy text
+
+\usepackage{booktabs} % Better horizontal rules in tables
+\usepackage{epsdice}
+
+\usepackage{graphicx} % Needed to insert images into the document
+\graphicspath{{graphics/}} % Sets the default location of pictures
+\setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio} % Improves figure scaling
+
+\usepackage{fancyvrb} % Allows customization of verbatim environments
+\fvset{fontsize=\normalsize} % The font size of all verbatim text can be changed here
+
+\newcommand{\hangp}[1]{\makebox[0pt][r]{(}#1\makebox[0pt][l]{)}} % New command to create parentheses around text in tables which take up no horizontal space - this improves column spacing
+\newcommand{\hangstar}{\makebox[0pt][l]{*}} % New command to create asterisks in tables which take up no horizontal space - this improves column spacing
+
+\usepackage{xspace} % Used for printing a trailing space better than using a tilde (~) using the \xspace command
+\newcommand{\veco}{\ensuremath{\mathbf{\Omega}}\xspace}
+\newcommand{\vecv}{\mathbf{v}\xspace}
+\newcommand{\msun}{\ensuremath{\mathrm{M}_\odot}\xspace}
+\newcommand{\rsun}{\ensuremath{\mathrm{R}_\odot}\xspace}
+\newcommand{\lsun}{\ensuremath{\mathrm{L}_\odot}\xspace}
+\newcommand{\ehat}{\hat{\mathbf{e}}\xspace}
+\usepackage{amsmath}
+\usepackage{mathtools}
+
+% \usepackage{natbib}
+% 
+% \usepackage{microtype} % Improves character and word spacing
+% 
+% \usepackage{lipsum} % Inserts dummy text
+% 
+% \usepackage{booktabs} % Better horizontal rules in tables
+% 
+% \usepackage{graphicx} % Needed to insert images into the document
+% \graphicspath{{graphics/}} % Sets the default location of pictures
+% \setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio} % Improves figure scaling
+% 
+% \usepackage{fancyvrb} % Allows customization of verbatim environments
+% \fvset{fontsize=\normalsize} % The font size of all verbatim text can be changed here
+% 
+% \newcommand{\hangp}[1]{\makebox[0pt][r]{(}#1\makebox[0pt][l]{)}} % New command to create parentheses around text in tables which take up no horizontal space - this improves column spacing
+% \newcommand{\hangstar}{\makebox[0pt][l]{*}} % New command to create asterisks in tables which take up no horizontal space - this improves column spacing
+
+\usepackage{xspace} % Used for printing a trailing space better than using a tilde (~) using the \xspace command
+
+\begin{document}
+
+\noindent\textbf{Problem Set: Protostars}
+
+
+\begin{enumerate}
+
+
+    \item Phases of Protostellar evolution
+
+        \begin{enumerate}
+            \item What phases does a protostar go through during collapse from a prestellar core through the first ignition of nuclear burning?
+
+                What physical processes are involved?
+
+            \item How does the core temperature evolve during this time?
+
+                Label this
+                plot of evolution, $T_c$ vs $t$, from the start of
+                collapse until the start of the main sequence. We assume the
+                cloud started with a temperature of 10K.
+
+                Label the Y-axis with the appropriate temperature (to an order
+                of magnitude) and label each segment with the physical
+                processes that are going on during that time period.
+
+                \begin{figure}[h!]
+                \includegraphics{TimeEvolutionPlot.pdf}
+                \end{figure}
+                
+
+
+        \end{enumerate}
+\item {\bf A Simple Protostellar Evolution Model.}\\
+Consider a protostar forming with a constant accretion rate $\dot{M}$. The
+accreting gas is fully molecular, arrives at free-fall, and radiates away a
+luminosity $L_{\rm acc} = f_{\rm acc} G M \dot{M}/R$ at the accretion shock,
+where $M$ and $R$ are the instantaneous protostellar mass and radius, and
+$f_{\rm acc}$ is a numerical constant of order unity. At the end of contraction
+the resulting star is fully ionized, all its deuterium has been burned to
+hydrogen, and it is in hydrostatic equilibrium. The ionization potential of
+hydrogen is $\psi_I = 13.6$ eV per amu, the dissociation potential of molecular
+hydrogen is $\psi_M=2.2$ eV per amu, and the energy released by deuterium
+burning is $\psi_D\approx 100$ eV per amu of total gas (not per amu of
+deuterium).
+
+ We will first consider a low-mass protostar whose internal structure is
+ well-described by an $n=3/2$ polytrope.
+
+
+\begin{enumerate}
+    \item 
+ Since it is in equilibrium, the gravitational and thermal energy
+ must be set by the Virial theorem, $|E_{grav}| =2 |E_{thermal}|$.
+ For a polytrope, $E_{grav} = \frac{3}{5-n} \frac{G M^2}{R}$.
+ Write down an expression for the total energy of the star,
+ including thermal energy, gravitational energy, and the chemical energies
+ associated with ionization, dissociation, and deuterium burning.
+\item Use your expression for the total energy to derive an evolution equation
+    for the radius for a star.  i.e., obtain an equation for $\dot{R}=\frac{dR}{dt}$.
+    % Start by taking the derivative of your energy equation.
+    %Assume that the change in energy with respect to time equals the luminosity, $L=|\dot{E}|$.
+\item Once you have this equation for $\dot{R}$, rearrange it to obtain an equation in terms
+    of $\frac{dR}{dM}$ ($\frac{dR}{dt} / \frac{dM}{dt} = \frac{dR}{dM}$).
+\item
+    \label{item:dlnrdlnm}
+    Rearrange this equation further to obtain $\frac{d \ln R}{d \ln M}$,
+    recalling that $d \ln x = \frac{1}{x}dx$.
+\item
+    \label{item:luminosity}
+    Write down an equation for the star's luminosity, which includes both the accretion 
+    luminosity and the nuclear burning luminosity. 
+    To obtain the nuclear burning luminosity,  assume the star is always on the Hayashi track,
+    which for the purposes of this problem we will approximate as having a
+    fixed effective temperature $T_{\rm H} = 3500$ K.
+\item 
+    Your equation from (\ref{item:dlnrdlnm}) should rearrange to
+\begin{equation}
+    \frac{d \ln R}{d \ln M} = \left[2 - \left(\frac{L}{\dot{M}}+\psi\right)\frac{10-2n}{3}\frac{R}{GM} \right]
+\end{equation}
+where $L$ comes from (\ref{item:luminosity}).
+
+    Numerically integrate this equation and plot the radius as a function of
+    mass for $\dot{M} = 10^{-5}$ $\msun$ yr$^{-1}$ and $f_{\rm acc}=3/4$. As an
+    initial condition, use $R=2.5$ $\rsun$ and $M=0.01$ $\msun$, and stop the
+    integration at a mass of $M=1.0$ $\msun$.
+    (hint: use \texttt{scipy.solve\_ivp} with \texttt{method='LSODA'})
+
+    Plot the radius and luminosity as
+    a function of mass; in the luminosity, include both the the accretion
+    luminosity and the internal luminosity produced by the star.
+\item Now explore what happens if you change the initial conditions.
+    Create new plots of the radius and luminosity as a function of mass, but now
+    use $R_0=0.5 R_\odot$. 
+\item 
+    Create new plots of the radius and luminosity as a function of mass, but now
+    use $\dot{M}=10^{-6} M_\odot \mathrm{yr}^{-1}$. 
+\item Now consider two modifications we can make to allow the model to work
+for massive protostars.
+
+First, since massive stars are radiative, the
+polytropic index will be roughly $n=3$ rather than $n=3/2$. Second, the
+surface temperature will in general be larger than the Hayashi limit, so take
+the luminosity to be $L=\max[L_{\rm H}, \lsun(M/\msun)^3]$, where $L_{\rm
+H}=4\pi R^2 \sigma T_{\rm H}^4$ and $R$ is the stellar radius.
+
+Modify your
+evolution equation for the radius to include these effects, and numerically
+integrate the modified equations up to $M=50$ $\msun$ for $\dot{M} = 10^{-4}$
+$\msun$ yr$^{-1}$ and $f_{\rm acc}=3/4$, using the same initial conditions as
+for the low mass case. Plot $R$ and $L$ versus $M$.
+%\item Compare your result to the fitting formula for the ZAMS radius of solar-metallicity stars as a function of $M$ in \citet{tout96a}\footnote{\href{http://adsabs.harvard.edu/abs/1996MNRAS.281..257T}{Tout et al., 1996, MNRAS 281, 257}}. Find the mass at which the massive star would join the main sequence. Your plots for $R$ and $L$ are only valid up to this mass, because this simple model does not include hydrogen burning.
+\end{enumerate}
+
+
+
+%     \item Problem: Opacities.
+% 
+%         You have seen that opacity is important for a wide range of physical processes, since it governs how light interacts with matter.
+%         \begin{enumerate}
+%             \item Using Karl Gordon's Dust Extinction package (https://dust-extinction.readthedocs.io/en/stable/), determine what the opacity
+%                 of dust is at 1000 angstroms and 10000 angstroms.  How much more opaque is dust to UV than to IR light?
+%                 (use the CCM89 model from \url{https://dust-extinction.readthedocs.io/en/stable/dust_extinction/choose_model.html#average-models})
+%             \item Planck mean
+%         \end{enumerate}
+
+%     \item Stellar evolution
+% 
+%         
+% 2. Determine the equation for the luminosity time evolution of a pre-main-sequence
+% star. The equation should be in terms of the initial luminosity and μ at t=0,
+% the mass of the star, and the energy generation per gram of gas. First
+% calculate the rate at which Hydrogen is converted into Helium and from this get
+% dX/dt (assume the star is just Helium and Hydrogen). From this measure the time
+% variation of μ. hen use the variation of μ with time to get the change in
+% luminosity.
+
+
+\end{enumerate}
+
+\end{document}
