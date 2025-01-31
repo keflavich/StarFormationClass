@@ -2,7 +2,7 @@
 \usepackage[inner=2.5cm,outer=2.5cm,top=4.5cm,bottom=4.5cm]{geometry}
 %\documentclass[]{tufte-book} % Use the tufte-book class which in turn uses the tufte-common class
 \pdfoutput=1
-\usepackage[super,numbers]{natbib}
+\usepackage[numbers]{natbib}
 \usepackage{aas_macros}
 
 \usepackage{microtype} % Improves character and word spacing
@@ -58,7 +58,7 @@ mass of the particle, $k_B$ is the Boltzmann constant, and $T$ is the
 temperature in Kelvin.
 
 \begin{enumerate}
-    \item The mass fraction of hydrogen, helium, and metals is\citep{Kauffmann2008}
+    \item The mass fraction of hydrogen, helium, and metals is \citep{Kauffmann2008}
         \begin{itemize}
             \item $X(H)=\frac{M(H)}{\mathcal{M}}=\frac{\mu_H N(H)}{\mathcal{M}}=0.71$
             \item $Y(He)=\frac{M(He)}{\mathcal{M}}=0.27$
@@ -68,18 +68,37 @@ temperature in Kelvin.
         hydrogen atom, $N(H)$ is the number of hydrogen atoms, and $M(...)$ is the mass of the specified particle type.
         Show that the mean molecular mass, i.e., the mean mass per H$_2$
         particle, is 2.82 AMU, and the mean mass per free particle is 2.36 AMU.
-        You may assume any reasonable value for $M(Z)$.
+        You may assume any reasonable value for $M(Z)$. % <- this is basically misdirection
+        % see Kauffmann+ 2008 MAMBO appendix
+        % mean mass per hydrogen atom is \mathcal{M} / M(H) = 1 / 0.71
+        % mean mass per hydrogen molecule is \mathcal{M} / M(H2) = \mathcal{M} / (2 M(H)) = 2 / 0.71 = 2.82
+        % mean mass per free particle in atomic gas is \mathcal{M} / (N(H2) + N(He) + N(z)) = 1/( 0.71 / 1 + 0.27 / 4 + 0.02 / 50) = 1.286
+        % mean mass per free particle is \mathcal{M} / (N(H2) + N(He) + N(z)) = 1/( 0.71 / 2 + 0.27 / 4 + 0.02 / 16) = 2.359
+
+
     \item Compute: What is the free-fall timescale in molecular clouds?  
         Recall, as shown in Krumholz \S6.3,
         $$t_{ff} = \sqrt{\frac{3 \pi}{32 G \rho}}$$
+        % tff = np.sqrt(3*np.pi/(32*constants.G*(1e2*u.cm**-3*2.8*u.Da))).to(u.Myr)
+        % 3.08 Myr
+
     \item Compute: What is the crossing time of a typical molecular cloud?  The
         crossing time is the time required for a sound wave to cross the cloud.
+        % c_s = np.sqrt(constants.k_B * 20*u.K / (2.34 * u.Da)).to(u.km/u.s)
+        % t_c = (10*u.pc / c_s).to(u.Myr)
+        % c_s, t_c
+        % 0.266 km/s, 36.6 Myr
     \item How do these compare?
     \item If the molecular cloud forms stars at 100\% efficiency (all of the
         gas becomes stars at some point), and it collapses in one free-fall
         time, what is the star formation rate?
+        % M = ((100*u.cm**-3 * 2.8*u.Da) * (4/3.*np.pi*(10*u.pc)**3)).to(u.M_sun)
+        % SFR = M / tff = 0.009 Msun/yr
         Given that the Galactic molecular gas mass is $\sim10^9$ \msun, what is the MW SFR?
+        % 1e9*u.M_sun/tff
+        % 324 Msun/yr
         Do we expect stars to form at this rate?
+        % no, efficiency is ~1%
 \end{enumerate}
 
 \item  \textbf{Observing Clouds} \\
@@ -123,7 +142,7 @@ temperature in Kelvin.
         \item (G) Typical clouds in the Solar Neighborhood have line widths $FWHM\approx 1.5 \mathrm{km~s}^{-1}$ on $\sim1$ pc size scales.
             At what size scale does the velocity dispersion predicted by this relation equal the sound speed in a 20K molecular cloud?
             % answer: fwhm -> sigma, (size / 1 pc)^0.5 = c_s / sigma(1pc) = 0.26 km/s / 0.7 km/s
-            % results in 0.14 pc
+            % results in 0.14 pc.... but actually 0.37 km/s??
             % 0.7 km/s comes from Shetty+ 2012 figure 8
             % 0.26 km/s = sqrt(k_B * T / 2.4 AMU)
             %
