@@ -138,7 +138,15 @@ $P_s$ is the pressure at the surface, and the pressure contrast is the same as t
 Hint: to evaluate the integral, it is helpful to use the isothermal Lane-Emden equation to substitute.
 
 
-\item Plot the dimensionless mass $m = M/(c_s^4/\sqrt{G^3 P_s})$ versus the dimensionless density contrast $\rho_s/\rho_c=e^{-\psi_s}$, where $\psi_s$ is the value of $\psi$ at $\xi=\xi_s$. You will see that $m$ reaches a finite maximum value $m_{\mathrm{max}}$ at a particular value of $\rho_c/\rho_s$. Numerically determine $m_{\mathrm{max}}$, along with the density contrast $\rho_c/\rho_s$ at which it occurs.
+% 2025: changed from $\rho_S/\rho_c=e^{-\psi_s}$ -> $\rho/\rho_c=e^{-\psi}$
+\item Plot the dimensionless mass $m = M/(c_s^4/\sqrt{G^3 P_s})$ versus the dimensionless de nsity contrast $\rho_s/\rho_c=e^{-\psi_s}$, where $\psi_s$ is the value of $\psi$ at $\xi=\xi_s$. You will see that $m$ reaches a finite maximum value $m_{\mathrm{max}}$ at a particular value of $\rho_c/\rho_s$. Numerically determine $m_{\mathrm{max}}$, along with the density contrast $\rho_c/\rho_s$ at which it occurs.
+
+Note that there is a little subtlety in the use of $\rho_S$ and $\psi_S$ here.  These are the solutions to the Lane-Emden equation evaluated at any given surface, i.e., they are
+\begin{displaymath}
+M =\frac{c_s^4}{\sqrt{4\pi G^3 P_s}} \left(e^{-\psi/2}\xi^2 \frac{d\psi}{d\xi}\right)_{\xi_s}
+\end{displaymath}
+and $\psi_S = \psi(\xi_S)$ and $\rho_S = \rho(\xi_S)$.
+
 \item (G) The existence of a finite maximum $m$ implies that, for a given dimensional mass $M$, there is a maximum surface pressure $P_s$ at which a cloud of that mass can be in hydrostatic equilibrium. Solve for this maximum, and compare your result to the result you obtained in part (a).
 \item (G) Conversely, for a given surface pressure $P_s$ and sound speed $c_s$ there exists a maximum mass at which the cloud can be in hydrostatic equilibrium, called the Bonnor-Ebert mass $M_{\mathrm{BE}}$. Obtain an expression for $M_{\mathrm{BE}}$ in terms of $P_s$ and $c_s$. In a typical low-mass star-forming region, the surface pressure on a core might be $P_{\mathrm{s}}/k_{\rm B} = 3\times 10^5$ K cm$^{-3}$. Compute this mass for a core with a temperature of 10 K, assuming the standard mean molecular weight $\mu=2.3$.\\
     By contrast, in Galactic centers and dense star forming regions in the early universe, the temperature and pressure may have been higher.  What is the Bonnor-Ebert mass for $P_{\mathrm{s}}/k_{\rm B} = 10^7$ K cm$^{-3}$ and T=$50$ K?
