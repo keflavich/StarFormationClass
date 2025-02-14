@@ -6,6 +6,8 @@ The course is based on Mark Krumholz's book ["Notes on Star Formation"](https://
 [Tom Megeath's course "The Secret Lives of Stars"](http://astro1.physics.utoledo.edu/~megeath/ph6820/ph6820.html),
 and [Jonathan Williams Star Formation course](http://www.ifa.hawaii.edu/users/jpw/classes/star_formation/).
 
+See also [Aleksandra Kuznetsova's class](https://github.com/akuznetsova/spf-2024)
+
 The lectures are a mix of Keynote slides and RISE-based Jupyter Notebook slide decks. 
 
 
