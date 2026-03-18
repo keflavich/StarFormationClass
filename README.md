@@ -1,22 +1,21 @@
-AST 4930 & 7939: Star Formation
-===============================
+AST 7939: Star Formation
+========================
+
+AKA "AST 7939: Prostars", where we are in favor of stars.
 
 The course is based on Mark Krumholz's book ["Notes on Star Formation"](https://github.com/Open-Astrophysics-Bookshelf/star_formation_notes),
 [Palla & Stahler's "The Formation of Stars"](https://ui.adsabs.harvard.edu/abs/2004fost.book.....S/abstract),
 [Tom Megeath's course "The Secret Lives of Stars"](http://astro1.physics.utoledo.edu/~megeath/ph6820/ph6820.html),
 and [Jonathan Williams Star Formation course](http://www.ifa.hawaii.edu/users/jpw/classes/star_formation/).
 
-See also [Aleksandra Kuznetsova's class](https://github.com/akuznetsova/spf-2024)
-
-The lectures are a mix of Keynote slides and RISE-based Jupyter Notebook slide decks. 
-
-
+As usual, all credit for things that are correct go to me, and all blame is on
+the reader.
 
 Lectures
 --------
 
  1. [Introduction / Syllabus](https://www.dropbox.com/s/s3gzqysitzpxhow/Lecture1_SyllabusAndIntro.pdf?dl=0)
- 1. [Molecular Clouds](https://www.dropbox.com/scl/fi/b7va41n6j63891nelsz1c/Lecture2_molecular_clouds_Williams_2024.pdf?rlkey=2gzcpbxve88pqvywue3pzz4z8&dl=0) | [keynote](https://www.dropbox.com/scl/fi/q9b6gqyc2djec3kaiq5hb/Lecture2_molecular_clouds_Williams_2024.key?rlkey=dmj473huha0wth894nj7hwxhe&st=t0ciuqdo&dl=0)
+ 1. [Molecular Clouds](https://www.dropbox.com/s/whyqtx6y0om4hto/molecular_clouds_Williams_2023.pdf?dl=0) | [keynote](https://www.dropbox.com/s/z1g5vwafc9mzrtd/Lecture2_molecular_clouds_Williams_2023.key?dl=0)
  1. [Gravitationally Unstable Cores](https://www.dropbox.com/s/dj245xf1uq9d380/Lecture%201%20-%20Unstable%20Cores.pdf?dl=0) | [ipynb](https://github.com/keflavich/StarFormationClass/blob/master/lectures/Lecture%203%20-%20Unstable%20Cores.ipynb)
  1. [Gravitational Collapse](https://www.dropbox.com/s/jh4gb5zso9m9b3m/Lecture%202%20-%20Gravitational%20Collapse.pdf?dl=0) | [ipynb](https://github.com/keflavich/StarFormationClass/blob/master/lectures/Lecture%204%20-%20Gravitational%20Collapse.ipynb)
  1. [Filaments](https://www.dropbox.com/s/qk15f9qbg8kgjad/Lecture%203%20-%20Filaments.pdf?dl=0) | [ipynb](https://github.com/keflavich/StarFormationClass/blob/master/lectures/Lecture%205%20-%20Filaments.ipynb)
